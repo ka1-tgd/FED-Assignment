@@ -1,15 +1,65 @@
-h1 {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header-text {
     text-align: center;
     color: #FFFFFF;
     font-family: 'Inter', sans-serif
 }
 
 .header-box {
+    height: 60px;
+    max-width: 100%;
+    margin-bottom: 10px;
     background-color: #3D8D7A;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-content {
+    text-align: center;
+    margin-top: 100px;
+    font-family: 'Inter', sans-serif;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.button {
+    padding: 24px 36px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-decoration: none;
+    border-width: 1px;
+    border-style: solid;
+    color: #000000;
+    border-color: #000000;
+    background-color: #EDEDED;
+}
+
+.hawker-stall-pic {
+    display: block;
+    margin: auto;
+    max-width: 300px;
+    margin-bottom: 50px;
 }
 
 .logo {
     display: block;
     margin: auto;
-    max-width: 500px;
+    max-width: 400px;
+}
+
+.copyright {
+    text-align: center;
+    font-family: 'Inter', sans-serif
 }
