@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif
+}
+
+.header-box {
+    background-color: #3D8D7A;
+}
+
+.logo {
+    display: block;
+    margin: auto;
+    max-width: 500px;
+}
