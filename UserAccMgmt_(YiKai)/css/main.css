@@ -133,13 +133,47 @@
 .enter-info-row {
     display: flex;
     align-items: center;
-    text-align: right
+    text-align: right;
 }
 
 .enter-info-row label {
     width: 90px;
     text-align: left;
     font-weight: bold;
+}
+
+.enter-info-row input {
+    background-color: #EDEDED;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.account-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.type-button {
+    padding: 5px 7px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #EDEDED;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.type-button:hover {
+    background-color: #E6F3EF;
+}
+
+.type-button.active {
+    background-color: #3D8D7A;
+    color: #FFFFFF;
 }
 
 /*Picture Styles*/
@@ -171,7 +205,9 @@
 /*Footer Styles*/
 .logo {
     display: block;
-    margin: auto;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
     max-width: 400px;
 }
 
