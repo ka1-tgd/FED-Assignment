@@ -181,6 +181,36 @@ body {
     flex-direction: column;
 }
 
+.account-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 15px;
+    font-size: 18px;
+}
+
+.acc-info-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.label {
+    font-weight: bold;
+    min-width: 140px;
+    text-align: right;
+}
+
+.value {
+    min-width: 220px;
+    text-align: left;
+}
+
+.user-actions {
+    margin-top: 40px;
+}
+
 /*Picture Styles*/
 .center {
     display: block;
@@ -220,6 +250,11 @@ body {
 
 .chicken-rice-pic {
     max-width: 150px;
+}
+
+.profile-pic {
+    margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 /*Footer Styles*/
