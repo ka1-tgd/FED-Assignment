@@ -173,7 +173,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 50px;
-    margin: 30px;
+    margin-top: 75px;
 }
 
 .homepage-card {
@@ -234,4 +234,8 @@ body {
 .copyright {
     text-align: center;
     margin-bottom: 20px;
+}
+
+.footer-adjust {
+    margin-top: 150px;
 }
