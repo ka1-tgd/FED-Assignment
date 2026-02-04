@@ -176,6 +176,34 @@
     color: #FFFFFF;
 }
 
+.homepage-header {
+    margin-bottom: 15px;
+}
+
+.homepage-actions {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 30px;
+}
+
+.homepage-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.homepage-button {
+    font-size: large;
+    font-weight: bold;
+    padding: 10px 25px;
+    border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000000;
+    background-color: #EDEDED;
+    margin-bottom: 10px;
+}
+
 /*Picture Styles*/
 .customer-pic {
     display: block;
@@ -200,6 +228,24 @@
     margin: auto;
     max-width: 300px;
     margin-bottom: 50px;
+}
+
+.hawker-stall-pic-homepage {
+    display: block;
+    margin: auto;
+    max-width: 200px;
+}
+
+.menu-pic {
+    display: block;
+    margin: auto;
+    max-width: 120px;
+}
+
+.chicken-rice-pic {
+    display: block;
+    margin: auto;
+    max-width: 150px;
 }
 
 /*Footer Styles*/
