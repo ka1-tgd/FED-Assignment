@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header{
+    height: 60px;
+    max-width: 100%;
+    margin-bottom: 30px;
+    background-color: #3d8d7a;
+
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 0px 20px;
+
+    text-align: center;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.exit-button{
+    padding: 8px 16px;
+    margin-left: 20px;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #a3d1c6;
+    font-weight: bold;
+}
+
+main{
+    display: flex;
+
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+}
+
+h1{
+    margin: 10px 0px;
+    font-size: 38px;
+}
+
+.queue-number-space{
+    margin: 0px 120px;
+    color: #3d8d7a;
+}
+
+.queue-number-box{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px 20px;
+    margin: 30px 100px;
+    border-radius: 30px;
+    background-color: #a3d1c6;
+    color: black;
+}
+
+.queue-number{
+    margin: 28px 0px;
+    font-size: 100px;
+}
+
+.check-queue-button{
+    display: block;
+    padding: 10px 50px;
+    margin: 0 auto;
+    margin-top: 30px;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #3d8d7a;
+    color: #FFFFFF;
+    font-size: large;
+    font-weight: bold;
+}
+
+.order-detail-box{
+    width: 380px;
+    padding: 0px 12px;
+    background-color: #3d8d7a;
+    color: #FFFFFF;
+}
+
+.order-detail-box h2{
+    margin: 10px 0px;
+}
+
+.order-detail{
+    text-align: start;
+
+    border: 2px solid #FFFFFF;
+    border-radius: 12px;
+    padding: 8px;
+    background-color: #a3d1c6;
+    color: black;
+}
+
+.order-detail h3{
+    border-bottom: 1px solid #FFFFFF;
+}
+
+.order-detail .order-item-detail{
+    border-bottom: none;
+    padding-left: 140px;
+    font-weight: normal;
+}
+
+.order-detail .order-item-price{
+    padding-left: 140px;
+    font-weight: normal;
+    text-align: end;
+}
+
+.cancel-order-button{
+    padding: 10px 50px;
+    margin: 30px 0px;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #a3d1c6;
+    color: black;
+    font-size: large;
+    font-weight: bold;
+}
