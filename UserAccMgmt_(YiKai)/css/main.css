@@ -3,6 +3,10 @@
     padding: 0;
 }
 
+body {
+    font-family: 'Inter', sans-serif;
+}
+
 /*Header Styles*/
 .start-header-box {
     height: 60px;
@@ -31,12 +35,10 @@
 .header-text {
     text-align: center;
     color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
 }
 
 .header-title {
-    color: #FFFFFF;
-    font-family: 'Inter', sans-serif;
+    color: #FFFFFF;;
     font-weight: lighter;
 }
 
@@ -47,14 +49,12 @@
 
 .header-nav-link {
     padding: 10px;
-    font-family: 'Inter', sans-serif;
     text-decoration: none;
     color: #FFFFFF;
 }
 
 .active {
     padding: 10px;
-    font-family: 'Inter', sans-serif;
     color: #FFFFFF;
     border-bottom: 3px solid #EDEDED;
 }
@@ -63,7 +63,6 @@
 .main-content {
     text-align: center;
     margin-top: 40px;
-    font-family: 'Inter', sans-serif;
 }
 
 .action-buttons {
@@ -75,27 +74,17 @@
 }
 
 .button {
-    padding: 24px 36px;
-    border-radius: 10px;
+    font-size: large;
     font-weight: bold;
     text-decoration: none;
-    border-width: 1px;
-    border-style: solid;
     color: #000000;
-    border-color: #000000;
-    background-color: #EDEDED;
-}
-
-.small-button {
-    padding: 12px 24px;
+    padding: 10px 25px;
     border-radius: 10px;
-    font-weight: bold;
-    text-decoration: none;
     border-width: 1px;
     border-style: solid;
-    color: #000000;
     border-color: #000000;
     background-color: #EDEDED;
+    margin-bottom: 10px;
 }
 
 .signup {
@@ -192,19 +181,12 @@
     flex-direction: column;
 }
 
-.homepage-button {
-    font-size: large;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #000000;
-    background-color: #EDEDED;
-    margin-bottom: 10px;
+/*Picture Styles*/
+.center {
+    display: block;
+    margin: auto;
 }
 
-/*Picture Styles*/
 .customer-pic {
     display: block;
     margin-top: 30px;
@@ -224,27 +206,19 @@
 }
 
 .hawker-stall-pic {
-    display: block;
-    margin: auto;
     max-width: 300px;
     margin-bottom: 50px;
 }
 
 .hawker-stall-pic-homepage {
-    display: block;
-    margin: auto;
     max-width: 200px;
 }
 
 .menu-pic {
-    display: block;
-    margin: auto;
     max-width: 120px;
 }
 
 .chicken-rice-pic {
-    display: block;
-    margin: auto;
     max-width: 150px;
 }
 
@@ -259,6 +233,5 @@
 
 .copyright {
     text-align: center;
-    font-family: 'Inter', sans-serif;
     margin-bottom: 20px;
 }
