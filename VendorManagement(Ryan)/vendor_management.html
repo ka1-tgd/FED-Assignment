@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu Page</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+
+<body>
+
+<!-- TOP NAV BAR -->
+<header class="navbar">
+    <div class="logo">Management page</div>
+    <nav>
+        <a href="#" class="active">Manage Menu</a>
+        <a href="#">Manage Inventory</a>
+        <a href="#">Renewal</a>
+        <a href="#">Log out</a>
+    </nav>
+</header>
+
+<!-- MAIN PAGE -->
+<main class="main">
+    <h1>Menu Page</h1>
+
+    <button id="addMenu" class="add-menu-btn">Add Menu item +</button>
+    <div class="page-container">
+
+        <!-- STORE LIST -->
+        <aside class="store-panel">
+            <h2>List of stores</h2>
+
+            <div class="store-item selected">
+                VeryNice Chicken Rice
+                <span class="arrow">▶</span>
+            </div>
+
+            <div class="store-item">
+                The Crispy Wok
+                <span class="arrow">▼</span>
+            </div>
+        </aside>
+
+        <!-- MENU GRID -->
+        <section class="menu-grid">
+
+            <!-- Example Card (repeat for items) -->
+            <div class="menu-card">
+                <img class="menu-img" src="steamChicken.jpg" alt="Steamed chicken rice">
+                <h3>Steamed chicken rice</h3>
+
+                <div class="footer">
+                    <span class="price">$3.50</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status active">● Active</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img class="menu-img" src="roastedChicken.jpg" alt="Roasted chicken rice">
+                <h3>Roasted chicken rice</h3>
+
+                <div class="footer">
+                    <span class="price">$3.50</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status active">● Active</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img class="menu-img" src="CrispyChicken.jpg" alt="Golden crispy chicken rice">
+                <h3>Golden Crispy chicken rice</h3>
+
+                <div class="footer">
+                    <span class="price">$4.50</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status active">● Active</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img class="menu-img" src="DrumstickRice.jpeg" alt="Chicken Drumstick rice">
+                <h3>Chicken Drumstick rice</h3>
+
+                <div class="footer">
+                    <span class="price">$5.50</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status active">● Active</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img class="menu-img" src="soyChicken.jpg" alt="Soy chicken rice">
+                <h3>Soy chicken rice</h3>
+
+                <div class="footer">
+                    <span class="price">$6.00</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status inactive">● Inactive</span>
+                </div>
+            </div>
+
+            <div class="menu-card">
+                <img class="menu-img" src="wholeChicken.jpeg" alt="Whole chicken">
+                <h3>Whole chicken</h3>
+
+                <div class="footer">
+                    <span class="price">$20.00</span>
+                    <button class="edit-btn">Edit</button>
+                    <span class="status active">● Active</span>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- PAGINATION -->
+    <div class="pagination">
+        <button>Previous</button>
+        <button class="current-page">1</button>
+        <button>Next</button>
+    </div>
+</main>
+<!-- ADD / EDIT MENU MODAL -->
+<div id="menuModal" class="modal-overlay">
+    <div class="modal-box">
+
+        <div class="modal-header">
+            Add / Edit menu item
+        </div>
+
+        <div class="modal-body">
+
+            <!-- Image Upload -->
+            <div class="image-upload">
+                <input type="file" id="menuImage" accept="image/*">
+               <label for="menuImage"></label>
+            </div>
+
+            <!-- Item Name -->
+            <div class="form-group">
+                <label>Item Name:</label>
+                <input type="text" placeholder="Enter name here">
+            </div>
+
+            <!-- Price -->
+            <div class="form-group price-group">
+                .<label>Set Price:</label>
+                <div class="price-input">
+                    <span>$</span>
+                    <input type="number" step="0.01">
+                </div>
+            </div>
+
+            <!-- Buttons -->
+            <div class="modal-actions">
+                <button class="cancel-btn">Cancel</button>
+                <button class="save-btn">Save</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="menu.js"></script>
+</body>
+</html>

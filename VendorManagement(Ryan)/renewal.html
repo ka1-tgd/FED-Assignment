@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Renewal</title>
+    <link rel="stylesheet" href="renewal.css">
+</head>
+
+<body>
+
+<!-- TOP NAV BAR -->
+<header class="navbar">
+    <div class="logo">Management page</div>
+    <nav>
+        <a href="#">Manage Menu</a>
+        <a href="#">Manage Inventory</a>
+        <a href="#" class="active">Renewal</a>
+        <a href="#">Log out</a>
+    </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main class="main">
+
+    <!-- PAGE TITLE -->
+    <h1 class="page-title">Renewal</h1>
+
+    <!-- CURRENT RENTAL AGREEMENT -->
+    <section class="agreement-section">
+
+        <div class="section-header">
+            <h2>Current Rental Agreement</h2>
+
+            <button class="location-btn">
+                Chinatown Hawker Centre
+                <span class="arrow">▼</span>
+            </button>
+        </div>
+
+        <div class="agreement-box">
+            <div class="agreement-row">
+                Stall Name: VeryNice Chicken rice
+            </div>
+            <div class="agreement-row">
+                Start Date: 21 Feb 2017
+            </div>
+            <div class="agreement-row">
+                End Date: 21 Feb 2027
+            </div>
+            <div class="agreement-row">
+                Monthly Payment: $1,550
+            </div>
+
+            <div class="agreement-row status-row">
+                Status: <span class="status-active">Active</span>
+
+                <button class="request-btn">Request Renewal</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- RENTAL AGREEMENT HISTORY -->
+    <section class="history-section">
+        <h2>Rental Agreement History</h2>
+
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>Agreement ID</th>
+                    <th>Start Date</th>
+                    <th>End Date</th>
+                    <th>Monthly Rent</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>023-TSU12</td>
+                    <td>12 July 2015</td>
+                    <td>12 July 2016</td>
+                    <td>$2,100</td>
+                    <td class="expired">Expired</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+</main>
+
+</body>
+</html>

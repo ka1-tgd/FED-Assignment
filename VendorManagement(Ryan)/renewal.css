@@ -1,0 +1,155 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    background: #ffffff;
+}
+
+/* NAVBAR */
+.navbar {
+    background: #3e8f7a;
+    padding: 15px 25px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+.navbar nav a.active {
+    border-bottom: 4px solid white;
+    padding-bottom: 5px;
+    border-radius: 2px;
+}
+
+/* MAIN */
+.main {
+    padding: 30px 40px;
+}
+
+/* PAGE TITLE */
+.page-title {
+    font-size: 32px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 35px;
+}
+
+.page-title::after {
+    content: "";
+    width: 140px;
+    height: 6px;
+    background: #3e8f7a;
+    display: block;
+    border-radius: 4px;
+    margin-top: 6px;
+}
+
+/* SECTION HEADER */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-size: 26px;
+}
+
+/* LOCATION BUTTON */
+.location-btn {
+    background: #3e8f7a;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.location-btn .arrow {
+    margin-left: 10px;
+}
+
+/* AGREEMENT BOX */
+.agreement-box {
+    border: 1px solid #333;
+    background: #efefef;
+    margin-bottom: 50px;
+}
+
+.agreement-row {
+    padding: 18px 22px;
+    border-bottom: 1px solid #777;
+    font-size: 18px;
+}
+
+.agreement-row:last-child {
+    border-bottom: none;
+}
+
+/* STATUS ROW */
+.status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status-active {
+    color: #2ecc71;
+    font-weight: bold;
+}
+
+/* REQUEST BUTTON */
+.request-btn {
+    background: #3e8f7a;
+    color: white;
+    border: none;
+    padding: 12px 26px;
+    font-size: 18px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* HISTORY SECTION */
+.history-section h2 {
+    margin-bottom: 15px;
+}
+
+/* TABLE */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.history-table thead {
+    background: #3e8f7a;
+    color: white;
+}
+
+.history-table th,
+.history-table td {
+    padding: 14px;
+    border: 1px solid #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+.history-table tbody tr {
+    background: #efefef;
+}
+
+.expired {
+    font-weight: bold;
+}

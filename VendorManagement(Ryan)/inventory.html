@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory Management</title>
+    <link rel="stylesheet" href="inventory.css">
+</head>
+<body>
+
+    <!-- Top Navigation -->
+    <header class="navbar">
+        <div class="logo">Management page</div>
+        <nav>
+            <a href="#">Manage Menu</a>
+            <a href="#" class="active">Manage Inventory</a>
+            <a href="#">Renewal</a>
+            <a href="#">Log out</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <h1>Inventory Page</h1>
+
+        <!-- Filters -->
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn active" onclick="filterItems('all')">All</button>
+                <button class="filter-btn" onclick="filterItems('low')">Low Stock</button>
+                <button class="filter-btn" onclick="filterItems('none')">No Stock</button>
+            </div>
+            <button class="add-btn">Add Ingredient +</button>
+        </div>
+
+        <!-- Inventory Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Ingredient name</th>
+                    <th>Category</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="inventoryTable">
+                <tr data-status="in">
+                    <td>Chicken</td>
+                    <td>Meats</td>
+                    <td>
+                        <select>
+                            <option>10</option>
+                        </select>
+                    </td>
+                    <td>KG</td>
+                    <td><span class="status in">In stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+
+                <tr data-status="in">
+                    <td>Rice</td>
+                    <td>Grains</td>
+                    <td>
+                        <select>
+                            <option>20</option>
+                        </select>
+                    </td>
+                    <td>KG</td>
+                    <td><span class="status in">In stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+
+                <tr data-status="low">
+                    <td>Soy Sauce</td>
+                    <td>Seasonings</td>
+                    <td>
+                        <select>
+                            <option>1</option>
+                        </select>
+                    </td>
+                    <td>Litres</td>
+                    <td><span class="status low">Low Stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+
+                <tr data-status="in">
+                    <td>Eggs</td>
+                    <td>Produce</td>
+                    <td>
+                        <select>
+                            <option>150</option>
+                        </select>
+                    </td>
+                    <td>Count</td>
+                    <td><span class="status in">In stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+
+                <tr data-status="none">
+                    <td>Ginger Paste</td>
+                    <td>Seasonings</td>
+                    <td>
+                        <select>
+                            <option>0</option>
+                        </select>
+                    </td>
+                    <td>G</td>
+                    <td><span class="status none">No stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+
+                <tr data-status="in">
+                    <td>Cucumber</td>
+                    <td>Vegetables</td>
+                    <td>
+                        <select>
+                            <option>30</option>
+                        </select>
+                    </td>
+                    <td>KG</td>
+                    <td><span class="status in">In stock</span></td>
+                    <td><button class="edit-btn">Edit</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </main>
+
+    <script src="inventory.js"></script>
+</body>
+</html>
