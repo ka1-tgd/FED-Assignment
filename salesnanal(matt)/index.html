@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hawker Analytics | Welcome</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="smalltop">Home</div>
+    <nav class="nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="sales.html">Sales analytics</a>
+      <a href="feedback.html">Customer feedback</a>
+      <a href="inspection.html">Inspection info</a>
+      <a href="#" data-logout="true">Log out</a>
+    </nav>
+  </header>
+
+  <main class="welcome-wrap">
+    <h1>Welcome!</h1>
+    <p><b>What’s on the agenda?</b></p>
+
+    <div class="welcome-actions">
+      <div class="action">
+        <button id="btnAnalytics">Analytics and Reporting</button>
+        <div class="iconbox">📊</div>
+      </div>
+
+      <div class="action">
+        <button type="button">Manage Stall</button>
+        <div class="iconbox">🏪</div>
+      </div>
+    </div>
+
+    <div class="brandmark">HAWKER</div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Link welcome button -> Sales analytics
+    document.getElementById("btnAnalytics").addEventListener("click", () => {
+      window.location.href = "sales.html";
+    });
+  </script>
+</body>
+</html>

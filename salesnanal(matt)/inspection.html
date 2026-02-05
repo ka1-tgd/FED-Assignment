@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analytics | Inspection info</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Analytics page</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="sales.html">Sales analytics</a>
+      <a href="feedback.html">Customer feedback</a>
+      <a href="inspection.html">Inspection info</a>
+      <a href="#" data-logout="true">Log out</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="section-title">Inspection info</div>
+    <div class="title-underline"></div>
+
+    <section class="inspect-box">
+      <div class="inspect-head">Latest Inspection</div>
+      <div class="inspect-body">
+        <div>Inspection Date: 2026-01-17</div>
+        <div>Stall Name: “Delicious Chicken Rice”</div>
+        <div>Hygiene Grade: A</div>
+        <div style="margin-top:6px;">
+          (Scores range from A to D, with A being the highest grade for cleanliness and food safety practices.)
+        </div>
+
+        <div style="margin-top:10px;"><b>Inspection Summary:</b></div>
+        <div>
+          During this inspection, the stall was assessed for cleanliness, food handling practices, storage procedures,
+          and general hygiene standards. The stall met all the necessary food safety requirements, demonstrating excellent
+          cleanliness and hygiene practices.
+        </div>
+
+        <div style="margin-top:10px;"><b>Score:</b> 90/100</div>
+        <ul>
+          <li>Cleanliness: 95/100</li>
+          <li>Food Handling: 90/100</li>
+          <li>Food Storage: 85/100</li>
+          <li>Waste Management: 100/100</li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="history-title">Hygiene Grade History</div>
+
+    <section class="history">
+      <div class="grade-card red">
+        <div class="grade">A</div>
+        <div class="date">17/01/26</div>
+      </div>
+
+      <div class="grade-card green">
+        <div class="grade">B</div>
+        <div class="date">12/07/25</div>
+      </div>
+
+      <div class="grade-card red">
+        <div class="grade">A</div>
+        <div class="date">24/01/25</div>
+      </div>
+
+      <div class="grade-card brown">
+        <div class="grade">C</div>
+        <div class="date">14/07/24</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

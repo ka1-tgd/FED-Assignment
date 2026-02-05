@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analytics | Sales analytics</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Analytics page</div>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="sales.html">Sales analytics</a>
+      <a href="feedback.html">Customer feedback</a>
+      <a href="inspection.html">Inspection info</a>
+      <a href="#" data-logout="true">Log out</a>
+    </nav>
+  </header>
+
+  <main class="page">
+    <div class="section-title">Sales analytics</div>
+    <div class="title-underline"></div>
+
+    <div class="layout">
+      <!-- Sidebar: Popular items -->
+      <aside class="sidebar">
+        <h3>Popular items</h3>
+
+        <div class="popular-item">
+          <div class="food-pic"> <img src="image/steamchickenrice.jpg" alt="Steamed Chicken Rice"> </div>
+          <div class="name">Steamed<br/>Chicken Rice</div>
+        </div>
+
+        <div class="popular-item">
+          <div class="food-pic"><img src="image/roastchickenrice.jpg" alt="Roasted Chicken Rice"></div>
+          <div class="name">Roasted<br/>Chicken Rice</div>
+        </div>
+
+        <div class="popular-item">
+          <div class="food-pic"><img src="image/rojak.jpg" alt="Rojak"></div>
+          <div class="name">Rojak</div>
+        </div>
+
+        <div class="popular-item">
+          <div class="food-pic"><img src="image/popiah.jpg" alt="Popiah"></div>
+          <div class="name">Popiah</div>
+        </div>
+
+        <div class="popular-item">
+          <div class="food-pic"><img src="image/satay.jpg" alt="Satay"></div>
+          <div class="name">Satay</div>
+        </div>
+      </aside>
+
+      <div class="divider-vert"></div>
+
+      <!-- Main -->
+      <section class="main">
+        <div class="panel">
+          <div class="panel-header">
+            <h2>Peak hours</h2>
+            <p><b>Average amount of transactions in different timeframes</b></p>
+          </div>
+
+          <div class="chart-wrap">
+            <div class="chart">
+              <!-- gridlines (visual like your screenshot) -->
+              <div class="gridline" style="top:20%"></div>
+              <div class="gridline" style="top:40%"></div>
+              <div class="gridline" style="top:60%"></div>
+              <div class="gridline" style="top:80%"></div>
+
+              <div class="y-label">Transactions</div>
+
+              <div class="bars" id="bars">
+                <!-- heights set by JS to match your screenshot-ish values -->
+                <div class="bar-group">
+                  <div class="bar" data-value="14"></div>
+                  <div class="tick">6 AM - 9 AM</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar" data-value="35"></div>
+                  <div class="tick">9 AM - 12 PM</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar" data-value="83"></div>
+                  <div class="tick">12 PM - 3 PM</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar" data-value="26"></div>
+                  <div class="tick">3 PM - 6 PM</div>
+                </div>
+                <div class="bar-group">
+                  <div class="bar" data-value="39"></div>
+                  <div class="tick">6 PM - 9 PM</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="x-label">Timings</div>
+          </div>
+        </div>
+
+        <!-- KPIs -->
+        <div class="kpis">
+          <div class="kpi">
+            <h4>Current promotion</h4>
+            <div class="small">1 Chicken Rice + 1 Rojak →<br/>30% off total</div>
+          </div>
+
+          <div class="kpi">
+            <h4>Today’s Revenue</h4>
+            <div class="money">$716.43(+6.7%)</div>
+          </div>
+
+          <div class="kpi">
+            <h4>Average Daily Orders</h4>
+            <div class="big">202.43</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    // Scale bars to a 0-100 style chart (matches screenshot look)
+    document.querySelectorAll(".bar").forEach(bar => {
+      const v = Number(bar.dataset.value);
+      // chart inner height approx 250px after padding, so we map 0-100 -> 0-250
+      const px = Math.max(6, Math.round((v / 100) * 250));
+      bar.style.height = px + "px";
+    });
+  </script>
+</body>
+</html>
