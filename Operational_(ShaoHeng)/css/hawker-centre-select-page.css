@@ -56,6 +56,11 @@ h1{
     font-weight: bold;
 }
 
+.GO-button:hover{
+    background-color: #FFFFFF;
+    color: #a3d1c6;
+}
+
 .logo {
     display: block;
     margin: auto;
