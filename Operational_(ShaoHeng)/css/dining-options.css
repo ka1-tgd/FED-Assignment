@@ -52,10 +52,13 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3d8d7a;
     margin: 0px 10px;
     margin-top: 20px;
+    border: 6px solid #3d8d7a;
     border-radius: 30px;
+
+    background-image: url('../images/hawker-centre-page-bg.jpg');
+    background-size: cover;
 }
 
 .choices-container button{
