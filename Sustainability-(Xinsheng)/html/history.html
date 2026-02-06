@@ -6,7 +6,6 @@
     <title>History | EcoHawker</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Table Styles */
         .table-container { overflow-x: auto; -webkit-overflow-scrolling: touch; }
         .styled-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); min-width: 600px; }
         .styled-table thead { background: #2d6a4f; color: white; }
@@ -18,13 +17,10 @@
         .completed { background: #d8f3dc; color: #2d6a4f; }
         .used { background: #e9ecef; color: #666; }
 
-        /* Footer */
         .site-footer { margin-top: 80px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
 
-        /* --- MOBILE RESPONSIVE RULES --- */
         @media (max-width: 768px) {
-            /* Stack Nav Links vertically */
             .main-header .nav-container { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -39,66 +35,33 @@
                 <a href="redeem.html">Redeem</a>
                 <a href="history.html" class="active">History</a>
             </nav>
-            <div class="points-badge">Points: <span id="point-balance">450</span></div>
+            <div class="points-badge">Points: <span id="point-balance">Loading...</span></div>
         </div>
     </header>
 
     <main class="content-wrapper">
         <h2>Points History</h2>
-
         <div class="table-container">
             <table class="styled-table">
                 <thead>
-                    <tr>
-                        <th>Date</th>
-                        <th>Activity</th>
-                        <th>Points</th>
-                        <th>Status</th>
-                    </tr>
+                    <tr><th>Date</th><th>Activity</th><th>Points</th><th>Status</th></tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>08 Feb 2026</td>
-                        <td>Plastic-Free Order</td>
-                        <td style="color: #2d6a4f; font-weight: bold;">+50</td>
-                        <td><span class="status-pill completed">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>07 Feb 2026</td>
-                        <td>Daily Eco-Login</td>
-                        <td style="color: #2d6a4f; font-weight: bold;">+10</td>
-                        <td><span class="status-pill completed">Completed</span></td>
-                    </tr>
-                    <tr>
-                        <td>05 Feb 2026</td>
-                        <td>Redeemed Free Drink</td>
-                        <td style="color: #d90429; font-weight: bold;">-250</td>
-                        <td><span class="status-pill used">Used</span></td>
-                    </tr>
-                    <tr>
-                        <td>01 Feb 2026</td>
-                        <td>Redeemed $1.00 Off</td>
-                        <td style="color: #d90429; font-weight: bold;">-100</td>
-                        <td><span class="status-pill used">Used</span></td>
-                    </tr>
-                    <tr>
-                        <td>28 Jan 2026</td>
-                        <td>Plastic-Free Order</td>
-                        <td style="color: #2d6a4f; font-weight: bold;">+50</td>
-                        <td><span class="status-pill completed">Completed</span></td>
-                    </tr>
+                <tbody id="history-table-body">
+                    <tr><td>17 Jan 2026</td><td>Used "Bring Your Own" (BYO)</td><td style="color:#2d6a4f; font-weight:bold;">+20</td><td><span class="status-pill completed">Completed</span></td></tr>
+                    <tr><td>14 Jan 2026</td><td>Redeemed $1 Discount Voucher</td><td style="color:#d90429; font-weight:bold;">-100</td><td><span class="status-pill used">Used</span></td></tr>
+                    <tr><td>12 Jan 2026</td><td>Declined Disposable Cutlery</td><td style="color:#2d6a4f; font-weight:bold;">+10</td><td><span class="status-pill completed">Completed</span></td></tr>
+                    <tr><td>11 Jan 2026</td><td>Opted for Eco-Friendly Packaging</td><td style="color:#2d6a4f; font-weight:bold;">+5</td><td><span class="status-pill completed">Completed</span></td></tr>
+                    <tr><td>11 Jan 2026</td><td>Declined Plastic Bag</td><td style="color:#2d6a4f; font-weight:bold;">+5</td><td><span class="status-pill completed">Completed</span></td></tr>
+                    <tr><td>05 Jan 2026</td><td>Used "Bring Your Own" (BYO)</td><td style="color:#2d6a4f; font-weight:bold;">+20</td><td><span class="status-pill completed">Completed</span></td></tr>
                 </tbody>
             </table>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-links">
-            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
-        </div>
-        <p>&copy; 2026 EcoHawker Management System.</p>
+        <div class="footer-links"><a href="home.html">Home</a>|<a href="food-surplus.html">Surplus</a>|<a href="redeem.html">Redeem</a>|<a href="history.html">History</a></div>
+        <p>&copy; 2026 EcoHawker.</p>
     </footer>
-
     <script src="logic.js"></script>
 </body>
 </html>

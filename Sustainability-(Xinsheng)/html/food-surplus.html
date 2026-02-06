@@ -6,16 +6,14 @@
     <title>Surplus Sales | EcoHawker</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Hero Section */
         .surplus-hero {
-            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background: linear-gradient(rgba(27,67,50,0.8), rgba(27,67,50,0.8)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
             background-size: cover; background-position: center; color: white;
             padding: 60px 20px; border-radius: 15px; text-align: center; margin-bottom: 40px;
         }
-        .timer-box { background: rgba(255, 255, 255, 0.2); padding: 15px 30px; border-radius: 10px; display: inline-block; margin-top: 20px; border: 1px solid rgba(255,255,255,0.4); }
+        .timer-box { background: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 10px; display: inline-block; margin-top: 20px; border: 1px solid rgba(255,255,255,0.4); }
         .countdown { font-size: 2rem; font-weight: bold; color: #ffcf56; }
 
-        /* Food Grid */
         .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         .food-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.2s; border: 1px solid #eee; }
         .food-card:hover { transform: translateY(-5px); }
@@ -27,15 +25,12 @@
         .new-price { color: #d90429; font-weight: bold; font-size: 1.2rem; }
         .old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; }
         .stock-badge { background: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
-        
         .btn-add { width: 100%; background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
         .btn-add:hover { background: #1b4332; }
 
-        /* Footer */
         .site-footer { margin-top: 60px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             .main-header .nav-container { flex-direction: column; gap: 15px; }
         }
@@ -51,7 +46,7 @@
                 <a href="redeem.html">Redeem</a>
                 <a href="history.html">History</a>
             </nav>
-            <div class="points-badge">Points: <span id="point-balance">450</span></div>
+            <div class="points-badge">Points: <span id="point-balance">Loading...</span></div>
         </div>
     </header>
 
@@ -66,20 +61,15 @@
         </section>
 
         <h2 style="text-align: left; border-left: 5px solid #2d6a4f; padding-left: 15px;">Available Now</h2>
-        
         <div class="food-grid">
-            
             <article class="food-card">
                 <img src="https://onehappybite.com/wp-content/uploads/2025/04/DSC05821-2.jpg" class="food-img" alt="Chicken Rice">
                 <div class="card-body">
                     <div class="stall-name">Tian Tian Chicken Rice</div>
                     <h3 class="food-name">Roasted Chicken Rice Set</h3>
-                    <div class="price-row">
-                        <span class="new-price">$2.50</span>
-                        <span class="old-price">$5.00</span>
-                    </div>
+                    <div class="price-row"><span class="new-price">$2.50</span><span class="old-price">$5.00</span></div>
                     <div class="stock-badge">⚡ Only 3 left</div>
-                    <button class="btn-add" onclick="addToCart('Roasted Chicken Rice Set')">Add to Cart</button>
+                    <button class="btn-add" onclick="location.href='packaging.html'">Add to Cart</button>
                 </div>
             </article>
 
@@ -88,12 +78,9 @@
                 <div class="card-body">
                     <div class="stall-name">328 Katong Laksa</div>
                     <h3 class="food-name">Laksa (Large)</h3>
-                    <div class="price-row">
-                        <span class="new-price">$3.00</span>
-                        <span class="old-price">$6.00</span>
-                    </div>
+                    <div class="price-row"><span class="new-price">$3.00</span><span class="old-price">$6.00</span></div>
                     <div class="stock-badge">⚡ Only 1 left</div>
-                    <button class="btn-add" onclick="addToCart('Laksa (Large)')">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCart('Laksa')">Add to Cart</button>
                 </div>
             </article>
 
@@ -102,25 +89,18 @@
                 <div class="card-body">
                     <div class="stall-name">Selera Rasa</div>
                     <h3 class="food-name">Royal Nasi Lemak</h3>
-                    <div class="price-row">
-                        <span class="new-price">$3.50</span>
-                        <span class="old-price">$7.00</span>
-                    </div>
+                    <div class="price-row"><span class="new-price">$3.50</span><span class="old-price">$7.00</span></div>
                     <div class="stock-badge">⚡ 5 left</div>
-                    <button class="btn-add" onclick="addToCart('Royal Nasi Lemak')">Add to Cart</button>
+                    <button class="btn-add" onclick="addToCart('Nasi Lemak')">Add to Cart</button>
                 </div>
             </article>
-
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-links">
-            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
-        </div>
-        <p>&copy; 2026 EcoHawker Management System.</p>
+        <div class="footer-links"><a href="home.html">Home</a>|<a href="food-surplus.html">Surplus</a>|<a href="redeem.html">Redeem</a>|<a href="history.html">History</a></div>
+        <p>&copy; 2026 EcoHawker.</p>
     </footer>
-
     <script src="logic.js"></script>
     <script>
         function startTimer(duration, display) {

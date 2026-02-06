@@ -1,52 +1,102 @@
-// 1. Get Elements
-const pointsDisplay = document.getElementById('point-balance');
-
-// 2. Set Points (Fixed at 450 as requested)
-// We check if points exist in storage; if not, we set them to 450.
-let userPoints = parseInt(localStorage.getItem('ecoPoints'));
-
-if (!userPoints) {
-    userPoints = 450;
+// 1. INITIALIZATION
+// Check if points exist; if not, start with 300
+let userPoints = localStorage.getItem('ecoPoints');
+if (userPoints === null) {
+    userPoints = 300;
     localStorage.setItem('ecoPoints', userPoints);
+} else {
+    userPoints = parseInt(userPoints);
 }
 
-// Update the header immediately
+// Load dynamic history (new real actions)
+let userHistory = JSON.parse(localStorage.getItem('ecoHistory')) || [];
+
+// Update the "Points: ..." badge on page load
+const pointsDisplay = document.getElementById('point-balance');
 if (pointsDisplay) {
     pointsDisplay.innerText = userPoints;
 }
 
-// 3. REDEEM PAGE LOGIC
+// 2. REDEEM FUNCTION
 function redeemReward(cost, name) {
     if (userPoints >= cost) {
+        // Deduct Points
         userPoints -= cost;
-        updateStorage();
+        
+        // Create Transaction Record
+        const newTransaction = {
+            date: new Date().toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }),
+            activity: `Redeemed ${name}`,
+            points: -cost,
+            status: "Used"
+        };
+        
+        // Add to storage
+        userHistory.unshift(newTransaction);
+        saveAllData();
+        
         alert(`Success! You redeemed: ${name}`);
+        if (pointsDisplay) pointsDisplay.innerText = userPoints;
+        
+        // Reload page to show change if on history page
+        if(window.location.href.includes("history.html")) location.reload();
+        
     } else {
-        alert("Not enough points!");
+        alert(`Insufficient Points! You need ${cost} points.`);
     }
 }
 
-// Helper: Update Header & Storage
-function updateStorage() {
+// 3. PACKAGING PAGE LOGIC
+const basePrice = 5.00;
+function updateTotal(adjustment, showQR) {
+    const newTotal = (basePrice + adjustment).toFixed(2);
+    const priceDisplay = document.getElementById('final-price');
+    const qrSection = document.getElementById('qr-section');
+    
+    if(priceDisplay) priceDisplay.innerText = newTotal;
+    if(qrSection) qrSection.style.display = showQR ? 'flex' : 'none';
+}
+
+function proceedToVerify() {
+    const byoRadio = document.getElementById('byo-radio');
+    if (byoRadio && byoRadio.checked) {
+        location.href = 'verification.html';
+    } else {
+        alert("Order added to cart!");
+        location.href = 'food-surplus.html';
+    }
+}
+
+function addToCart(item) {
+    alert("Added " + item + " to cart!");
+}
+
+// 4. SAVE HELPER
+function saveAllData() {
     localStorage.setItem('ecoPoints', userPoints);
-    if (pointsDisplay) {
-        pointsDisplay.innerText = userPoints;
-    }
+    localStorage.setItem('ecoHistory', JSON.stringify(userHistory));
 }
 
-// Add to Cart Logic
-function addToCart(itemName) {
-    alert(`Added to Cart: ${itemName}\n\n(This would normally open the checkout page)`);
+// 5. HISTORY RENDERER (Merges Real + Fake Data)
+const historyTableBody = document.getElementById('history-table-body');
+if (historyTableBody) {
+    
+    // Reverse loop to keep order correct when prepending
+    [...userHistory].reverse().forEach(item => {
+        const row = document.createElement('tr');
+        
+        const pointsColor = item.points < 0 ? '#d90429' : '#2d6a4f';
+        const pointsSign = item.points > 0 ? '+' : '';
+        let pillClass = item.status === "Used" ? "used" : "completed";
+
+        row.innerHTML = `
+            <td>${item.date}</td>
+            <td>${item.activity}</td>
+            <td style="color: ${pointsColor}; font-weight: bold;">${pointsSign}${item.points}</td>
+            <td><span class="status-pill ${pillClass}">${item.status}</span></td>
+        `;
+        
+        // Insert at the very top of the table body
+        historyTableBody.prepend(row);
+    });
 }
-
-
-// Logic for awarding points based on packaging selection
-function handlePackagingPoints(pointValue) {
-    if (pointValue > 0) {
-        userPoints += pointValue;
-        updateStorage();
-        // This makes sure the new points show up when you go back to the Home page
-    }
-}
-
-// In packaging.html, you can trigger this when "Add to Cart" is clicked:
