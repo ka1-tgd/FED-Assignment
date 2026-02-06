@@ -141,6 +141,16 @@ main{
     font-weight: bold;
 }
 
+.packaging-toggle-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: lightgray;
+    padding: 5px;
+    margin-top: 6px;
+    border-radius: 8px;
+}
+
 .payment-method{
     margin: 30px 0px;
     padding: 6px;
