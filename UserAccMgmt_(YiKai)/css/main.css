@@ -122,7 +122,6 @@ body {
 .enter-info-row {
     display: flex;
     align-items: center;
-    text-align: right;
 }
 
 .enter-info-row label {
@@ -132,6 +131,8 @@ body {
 }
 
 .enter-info-row input {
+    flex: 1;
+    padding: 5px;
     background-color: #EDEDED;
     border-width: 1px;
     border-radius: 5px;
@@ -139,30 +140,14 @@ body {
 
 .account-type {
     display: flex;
-    justify-content: center;
+    gap: px;
+}
+
+.acc-type-choice {
+    display: flex;
     align-items: center;
+    justify-content: center;
     gap: 5px;
-}
-
-.type-button {
-    padding: 5px 7px;
-    border-radius: 10px;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #000000;
-    background-color: #EDEDED;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
-
-.type-button:hover {
-    background-color: #E6F3EF;
-}
-
-.type-button.active {
-    background-color: #3D8D7A;
-    color: #FFFFFF;
 }
 
 .homepage-header {
@@ -244,6 +229,15 @@ body {
     max-width: 200px;
 }
 
+.iconbox{
+  width:120px;
+  height:120px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:70px;
+}
+
 .menu-pic {
     max-width: 120px;
 }
@@ -255,6 +249,30 @@ body {
 .profile-pic {
     margin-top: 30px;
     margin-bottom: 20px;
+}
+
+.flex-fooditem{
+    display: flex;
+    flex-grow: 1;
+    flex-basis: 20%;
+    flex-direction: column;
+    text-align: left;
+    max-width: 24%;
+    background-color: #a3d1c6;
+    color: black;
+    margin: 0.5%; 
+    padding: 8px;
+    border: 2px solid #FFFFFF;
+    border-radius: 6px;
+}
+
+.order-card {
+    margin: 30px;
+    width: 200px;
+    border-style: solid;
+    border-width: 0.5px;
+    border-radius: 10px;
+    background-color: #EDEDED;
 }
 
 /*Footer Styles*/

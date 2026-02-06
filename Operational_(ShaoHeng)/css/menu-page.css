@@ -84,6 +84,7 @@ h1{
     text-align: left;
     max-width: 24%;
     background-color: #a3d1c6;
+    color: black;
     margin: 0.5%; 
     padding: 8px;
     border: 2px solid #FFFFFF;
@@ -91,9 +92,17 @@ h1{
 }
 
 @media (max-width: 576px) {
+    main h2{
+        font-size: large;
+    }
+
     .flex-fooditem{
         flex-basis: 48%;
         max-width: 48%;
+    }
+
+    .flex-fooditem h3{
+        min-height: 42px;
     }
 }
 

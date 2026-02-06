@@ -40,17 +40,21 @@ h2{
 .queue-dashboard-box{
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 
     margin: 0px 50px;
-    padding: 0px 50px;
-    padding-top: 50px;
-    padding-bottom: 20px;
-    height: 362px;
+    padding: 40px 50px;
+    min-height: 320px;
 
     background-color: #3d8d7a;
+    border: 6px solid #FFFFFF;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px gray;
 }
 
 .queue-box{
+    width: 28%;
+
     border-radius: 12px;
     background-color: #FFFFFF;
 }
@@ -58,9 +62,24 @@ h2{
 .queue-box h1{
     margin: 4px;
     padding: 4px;
-    min-width: 260px;
 
     border-radius: 10px;
     background-color: #a3d1c6;
     color: #FFFFFF;
+    word-wrap: break-word;
+}
+
+@media (max-width: 576px) {
+    .queue-dashboard-box{
+        padding: 30px;
+    }
+
+    .queue-box{
+        width: 100%;
+        margin: 6px;
+    }
+
+    .queue-box h1{
+        font-size: large;
+    }
 }

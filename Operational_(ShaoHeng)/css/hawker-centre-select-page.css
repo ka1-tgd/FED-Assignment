@@ -1,22 +1,38 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header{
     height: 60px;
     max-width: 100%;
+    margin-bottom: 30px;
     background-color: #3d8d7a;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
-    margin-bottom: 30px;
 
     text-align: center;
     color: #FFFFFF;
     font-family: 'Inter', sans-serif;
+}
+
+header a{
+    text-decoration: none;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+}
+
+.exit-button{
+    padding: 8px 16px;
+    margin-left: 20px;
+    border: 0px;
+    border-radius: 25px;
+    background-color: #a3d1c6;
+    font-weight: bold;
 }
 
 main{
@@ -37,8 +53,10 @@ h1{
     display: inline-block;
     border: 1px solid black;
     border-radius: 25px;
-    padding: 8px 100px;
+    padding: 8px;
     margin-bottom: 30px;
+
+    min-width: 40%;
     background-color: lightgray;
     color: #808080;
 }
@@ -71,4 +89,30 @@ h1{
 .copyright {
     text-align: center;
     font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 576px) {
+    header{
+        margin-bottom: 50px;
+    }
+
+    h1{
+        font-size: xx-large;
+        padding: 50px;
+    }
+
+    .hc-search-bar{
+        font-size: large;
+        padding: 2px 20px;
+        margin-bottom: 50px;
+    }
+
+    .GO-button{
+        margin-bottom: 30px;
+    }
+
+    .logo{
+        margin-top: 80px;
+        max-width: 78%;
+    }
 }

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proceed Order</title>
+    <link rel="stylesheet" href="../css/ordering-page.css">
+</head>
+<body>
+    <header>
+        <h3>Cart</h3>
+        <div>
+            <a href="menu-page.html" style="text-decoration: none;">
+                <button class="exit-button">exit</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <div class="ordering-box">
+            <div class="order-item-block">
+                <h3>Food Item 1</h3>
+
+                <div class="size-toggle-container">
+                    <div class="normal-option">
+                        <input type="radio" id="normal" name="size-toggle-grp" checked>
+                        <label for="normal">Normal</label>
+                    </div>
+                    <div class="up-size-option">
+                        <input type="radio" id="up-size" name="size-toggle-grp">
+                        <label for="up-size">Up-size (+$0.30)</label>
+                    </div>
+                </div>
+
+                <div class="quantity">
+                    <button onclick="changeQuantity(-1)">−</button>
+                    <h4 id="quantity-display">1</h4>
+                    <button onclick="changeQuantity(1)">+</button>
+                </div>
+
+                <h4 class="item-price">Cost: $3.50</h4>
+            </div>
+
+            <button class="add-item-button">add item</button>
+
+            <div class="sub-total">
+                <h3>Sub Total: $3.50</h3>
+                <div class="dining-toggle-container">
+                    <div class="dine-in-option">
+                        <input type="radio" id="dine-in" name="dining-toggle-grp" checked>
+                        <label for="dine-in">Dine In</label>
+                    </div>
+                    <div class="take-away-option">
+                        <input type="radio" id="take-away" name="dining-toggle-grp">
+                        <label for="take-away">Take Away</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="payment-method">
+                <h3>Payment Method:</h3>
+                <div class="payment-toggle-container">
+                    <div class="cash-option">
+                        <input type="radio" id="cash" name="payment-toggle-grp" checked>
+                        <label for="cash">Cash</label>
+                    </div>
+                    <div class="bank-transfer-option">
+                        <input type="radio" id="bank-transfer" name="payment-toggle-grp">
+                        <label for="bank-transfer">Bank Transfer</label>
+                    </div>
+                </div>
+            </div>
+
+            <a href="queue-number.html" style="text-decoration: none;">
+                <button class="place-order-button">Place Order</button>
+            </a>
+        </div>
+    </main>
+</body>
+</html>
