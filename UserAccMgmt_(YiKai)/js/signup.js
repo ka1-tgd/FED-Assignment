@@ -28,7 +28,7 @@ form.addEventListener("submit", async (e) => {
         // Store info in Firestore
         await setDoc(doc(db, "users", user.uid), {
             email: email,
-            userType: userType,
+            role: userType,
             createdAt: new Date()
         });
 
@@ -36,7 +36,7 @@ form.addEventListener("submit", async (e) => {
 
         // Redirect to login page
         console.log("Redirecting to login.html")
-        window.location.href = "../login.html"
+        window.location.href = "login.html"
     }
     
     catch (error) {

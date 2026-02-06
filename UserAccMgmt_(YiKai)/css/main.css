@@ -196,6 +196,11 @@ body {
     margin-top: 40px;
 }
 
+.error-msg {
+    color: red;
+    margin-top: 10px;
+}
+
 /*Picture Styles*/
 .center {
     display: block;
