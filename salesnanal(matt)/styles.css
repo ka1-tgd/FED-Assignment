@@ -59,7 +59,7 @@ body{
 
 .page{
   padding:18px 18px 28px;
-  max-width: 1300px;   /* keeps it like your mockup */
+  max-width: 1300px;   
   margin: 0 auto;      /* centers the content */
 }
 
@@ -116,14 +116,14 @@ body{
     align-items:center;
     justify-content:center;
 
-    overflow:hidden;   /* 🔴 IMPORTANT: prevents overflow */
+    overflow:hidden;   /* IMPORTANT: prevents overflow */
     flex-shrink:0;     /* prevents stretching */
 }
 
 .food-pic img{
   width:100%;
   height:100%;
-  object-fit:cover;  /* 🔴 crops image to fit circle */
+  object-fit:cover;  /* crops image to fit circle */
   display:block;
 }
   
