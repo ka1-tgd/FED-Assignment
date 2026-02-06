@@ -15,8 +15,9 @@
     </header>
     <main>
         <h1>Where are you?</h1>
-        <h3 class="hc-search-bar">Enter the Hawker Centre Name</h3>
-        <button class="GO-button" onclick="window.location.href='food-stalls-page.html';">
+        <input id="hawkerInput" class="hc-search-bar" list="hawkerOptions" type="text" placeholder="Enter the Hawker Centre Name">
+        <datalist id="hawkerOptions"></datalist>
+        <button id="goBtn" class="GO-button">
             GO
         </button>
     </main>
