@@ -5,7 +5,7 @@
         <title>Manage Orders</title>
 
         <!--Shared Styles-->
-        <link rel="stylesheet" href="../css/main.css">
+        <link rel="stylesheet" href="../../UserAccMgmt_(YiKai)/css/main.css">
     </head>
 
     <body>
@@ -22,13 +22,15 @@
         <main class="main-content">
             <h1>Orders</h1>
 
-            <div class="order-card">
+            <div class="order-card" data-order-id="12" data-status="received">
                 <p><strong>Order #12</strong></p>
                 <p>Chicken Rice</p>
 
+                <p class="order-status">Status: Received</p>
+
                 <div class="order-actions">
-                    <button onclick="moveToPreparing(this)">Preparing</button>
-                    <button onclick="moveToComplete(this)">Complete</button>
+                    <button class="btn-preparing">Preparing</button>
+                    <button class="btn-complete">Complete</button>
                 </div>
             </div>
             
@@ -42,6 +44,6 @@
         </footer>
 
         <!--Link to script.js-->
-        <script type="module" src="../js/script.js"></script>
+        <script type="module" src="../js/manage-order.js"></script>
     </body>
 </html>
