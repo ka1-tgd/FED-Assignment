@@ -87,14 +87,22 @@ h1{
     background-color: #a3d1c6;
     margin: 0.5%; 
     padding: 8px;
-    border: 2px solid #FFFFFF;
+    border: 1px solid #FFFFFF;
     border-radius: 6px;
 }
 
 @media (max-width: 576px) {
+    main h2{
+        font-size: large;
+    }
+
     .flex-stall{
         flex-basis: 48%;
         max-width: 48%;
+    }
+
+    .flex-stall h3{
+        min-height: 42px;
     }
 }
 
