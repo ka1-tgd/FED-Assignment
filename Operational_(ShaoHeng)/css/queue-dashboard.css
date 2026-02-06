@@ -69,6 +69,16 @@ h2{
     word-wrap: break-word;
 }
 
+.queue-box #queue-order{
+    text-align: center;
+
+    margin: 4px;
+    padding: 4px;
+
+    border-radius: 10px;
+    background-color: lightgray;
+}
+
 @media (max-width: 576px) {
     .queue-dashboard-box{
         padding: 30px;
