@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Inventory Management</title>
+  <link rel="stylesheet" href="../css/inventory.css">
+</head>
+<body>
+  <header class="navbar">                             <!-- Top Navigation -->
+    <div class="logo">Management page</div>
+<nav>
+     <a href="dashboard.html">Dashboard</a>
+     <a href="orders.html">Orders</a>
+     <a href="menu.html">Manage Menu</a>
+     <a href="inventory.html" class="active">Manage Inventory</a>
+     <a href="renewal.html">Renewal</a>
+     <a href="dashboard.html">Log out</a>
+</nav>
+
+  </header>
+  <main class="container">               <!-- Main Content -->
+    <h1>Inventory Page</h1>
+    <div class="controls">                  <!-- Filters -->
+      <div class="filters">
+        <button class="filter-btn active" onclick="filterItems('all', event)">All</button>
+        <button class="filter-btn" onclick="filterItems('low', event)">Low Stock</button>
+        <button class="filter-btn" onclick="filterItems('none', event)">No Stock</button>
+      </div>
+
+      <button class="add-btn" id="addIngredientBtn">Add Ingredient +</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Ingredient name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th>Unit</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody id="inventoryTable">
+        <tr data-status="in">
+          <td>Chicken</td>
+          <td>Meats</td>
+          <td>
+            <select><option>10</option></select>            <!-- chicken -->
+          </td>
+          <td>KG</td>
+          <td><span class="status in">In stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr data-status="in">
+          <td>Rice</td>
+          <td>Grains</td>
+          <td>
+            <select><option>20</option></select>             <!-- rice -->
+          </td>
+          <td>KG</td>
+          <td><span class="status in">In stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr data-status="low">
+          <td>Soy Sauce</td>
+          <td>Seasonings</td>                           <!-- soy sauce-->
+          <td>
+            <select><option>1</option></select>
+          </td>
+          <td>Litres</td>
+          <td><span class="status low">Low Stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr data-status="in">
+          <td>Eggs</td>
+          <td>Produce</td>                    <!-- eggs -->
+          <td>
+            <select><option>150</option></select>
+          </td>
+          <td>Count</td>
+          <td><span class="status in">In stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr data-status="none">
+          <td>Ginger Paste</td>
+          <td>Seasonings</td>                <!-- ginger paste -->
+          <td>
+            <select><option>0</option></select>
+          </td>
+          <td>G</td>
+          <td><span class="status none">No stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+
+        <tr data-status="in">
+          <td>Cucumber</td>
+          <td>Vegetables</td>              <!-- cucumber -->
+          <td>
+            <select><option>30</option></select>
+          </td>
+          <td>KG</td>
+          <td><span class="status in">In stock</span></td>
+          <td><button class="edit-btn">Edit</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+  <div id="ingredientModal" class="modal-overlay hidden">
+    <div class="modal-box small">
+
+      <div class="modal-header">Add / Edit ingredient</div>         <!-- add button -->
+
+      <div class="modal-body">                  <!-- pop up for adding ingredient -->
+        <div class="form-group">
+          <label>Ingredient Name:</label>
+          <input id="ingName" type="text" placeholder="Enter ingredient name">
+        </div>
+
+        <div class="form-group">
+          <label>Category:</label>
+          <input id="ingCategory" type="text" placeholder="Enter category (e.g. Seasonings)">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Quantity:</label>
+            <input id="ingQty" type="number" min="0" value="0">
+          </div>
+
+          <div class="form-group">
+            <label>Unit:</label>
+            <input id="ingUnit" type="text" placeholder="e.g. KG / Litres / G">
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="cancel-btn" id="cancelModalBtn">Cancel</button>
+          <button class="save-btn" id="saveModalBtn">Save</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="../js/inventory.js"></script>
+</body>
+</html>
+

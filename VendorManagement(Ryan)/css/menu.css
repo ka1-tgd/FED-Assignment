@@ -8,7 +8,6 @@ body {
     background: #ffffff;
 }
 
-/* NAV BAR */
 .navbar {
     background: #3e8f7a;
     padding: 15px 25px;
@@ -30,7 +29,6 @@ body {
     padding-bottom: 5px;
 }
 
-/* MAIN PAGE */
 .main {
     padding: 25px 35px;
     position: relative;
@@ -42,7 +40,6 @@ body {
     font-size: 28px;
 }
 
-/* ADD MENU BUTTON */
 .add-menu-btn {
     position: absolute;
     right: 35px;
@@ -77,17 +74,12 @@ body {
     margin-top: 6px;
 }
 
-
-/* LAYOUT */
 .page-container {
     display: flex;
     gap: 30px;
     align-items: stretch; 
 }
 
-
-
-/* STORE PANEL */
 .store-panel {
     width: 260px;
     background: #3e8f7a;
@@ -118,7 +110,6 @@ body {
     background: #cdeae2;
 }
 
-/* MENU GRID */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -143,13 +134,11 @@ body {
     border-radius: 6px;
 }
 
-/* ITEM TITLE */
 .menu-card h3 {
     font-size: 15px;
     margin: 12px 0 18px 0;
 }
 
-/* FOOTER */
 .footer {
     display: flex;
     align-items: center;
@@ -184,7 +173,6 @@ body {
     color: gray;
 }
 
-/* PAGINATION */
 .pagination {
     margin-top: 5px;     
     margin-bottom: 10px;
@@ -204,7 +192,6 @@ body {
     background: #3e8f7a !important;
     color: white;
 }
-/* MODAL OVERLAY */
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -215,14 +202,12 @@ body {
     z-index: 1000;
 }
 
-/* MODAL BOX */
 .modal-box {
     width: 700px;
     background: #efefef;
     border: 1px solid #333;
 }
 
-/* HEADER */
 .modal-header {
     background: #3e8f7a;
     color: white;
@@ -231,12 +216,10 @@ body {
     font-weight: bold;
 }
 
-/* BODY */
 .modal-body {
     padding: 30px;
 }
 
-/* IMAGE UPLOAD */
 .image-upload {
     height: 200px;
     border: 2px dashed #999;
@@ -252,7 +235,6 @@ body {
     color: #999;
 }
 
-/* FORM */
 .form-group {
     display: flex;
     align-items: center;
@@ -271,7 +253,6 @@ body {
     font-size: 18px;
 }
 
-/* PRICE */
 .price-input {
     display: flex;
     align-items: center;
@@ -293,7 +274,7 @@ body {
     width: 100%;
 }
 
-/* BUTTONS */
+/* button */
 .modal-actions {
     display: flex;
     justify-content: flex-end;

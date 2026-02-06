@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard</title>
+  <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+<body>
+
+  <!-- TOP NAV BAR (same style as your other pages) -->
+  <header class="navbar">
+    <div class="logo">Management page</div>
+<nav>
+    <a href="dashboard.html" class="active">Dashboard</a>
+    <a href="orders.html">Orders</a>
+    <a href="menu.html">Manage Menu</a>
+    <a href="inventory.html">Manage Inventory</a>
+    <a href="renewal.html">Renewal</a>
+    <a href="dashboard.html">Log out</a>
+</nav>
+
+  </header>
+
+  <main class="main">
+    <div class="container">
+
+<div class="dash-header">
+  <div class="page-title">Vendor Dashboard</div>
+  <h1 class="stall-header">VeryNice Chicken rice</h1>
+</div>
+      <!-- TOP SUMMARY CARDS -->
+<section class="summary-grid">
+  <div class="summary-card">
+    <div class="summary-title">
+      <span class="summary-icon">✓</span>
+      <span>Orders</span>
+    </div>
+
+    <div class="summary-stats" id="orderStats">
+      <!-- filled by JS -->
+    </div>
+  </div>
+</section>
+<!-- main grid -->
+<section class="content-grid">
+   <div class="col">              
+      <section class="panel">                       <!-- manage menu -->
+          <div class="panel-header">
+            <h2>Manage Menu</h2>
+            <button class="pill-btn" id="viewFullMenuBtn">View Full Menu</button>
+            </div>
+            <div class="panel-body">
+              <div class="subhead">Bestseller</div>
+              <div class="menu-list" id="menuList">
+              </div>
+            </div>
+          </section>
+          <section class="panel">                     <!-- renewal -->
+            <div class="panel-header">
+              <h2>Renewal</h2>
+              <button class="pill-btn" id="viewRenewalBtn">View Details</button>
+            </div>
+
+            <div class="panel-body renewal-body">
+              <div class="renew-row">Stall Name: <span class="muted">VeryNice Chicken rice</span></div>
+              <div class="renew-row"><span class="muted">Chinatown Hawker Centre</span></div>
+              <div class="renew-row">Start Date: <span class="muted">21 Feb 2017</span></div>
+              <div class="renew-row">Monthly Payment: <span class="muted">$1,550</span></div>
+              <div class="renew-row">Status: <span class="muted">$1,550</span></div>
+
+              <div class="renew-actions">
+                <button class="pill-btn" id="requestRenewalBtn">Request Renewal</button>
+              </div>
+            </div>
+
+            <div class="panel-footer">
+              © 2026 Vendor Management System
+            </div>
+          </section>
+        </div>
+
+        <!-- RIGHT COLUMN -->
+        <div class="col">
+
+          <!-- MANAGE INVENTORY (table-style like your picture) -->
+          <!-- MANAGE INVENTORY (Dashboard summary) -->
+<section class="panel">
+  <div class="panel-header">
+    <h2>Manage Inventory</h2>
+    <button class="pill-btn" id="viewFullInventoryBtn">View Full Inventory</button>
+  </div>
+
+  <div class="panel-body">
+    <table class="data-table">
+<thead>
+  <tr>
+    <th>Ingredient name</th>
+    <th>Category</th>
+    <th class="col-status">Status</th>
+  </tr>
+</thead>
+
+      <tbody id="inventoryTableBody">
+        <!-- filled by JS -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+          <!-- RECENT ORDERS -->
+          <section class="panel">
+            <div class="panel-header">
+              <h2>Recent Orders</h2>
+              <button class="pill-btn" id="viewAllOrdersBtn">View All Orders</button>
+            </div>
+
+            <div class="panel-body">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th class="col-id">ID</th>
+                    <th>Food Item</th>
+                    <th class="col-time">Time</th>
+                    <th class="col-status">Status</th>
+                  </tr>
+                </thead>
+                <tbody id="ordersTableBody">
+                  <!-- filled by JS -->
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

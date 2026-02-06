@@ -3,31 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <title>Menu Page</title>
-    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" href="../css/menu.css">
 </head>
 
 <body>
-
-<!-- TOP NAV BAR -->
-<header class="navbar">
+<header class="navbar">                            <!-- top navigation -->
     <div class="logo">Management page</div>
-    <nav>
-        <a href="#" class="active">Manage Menu</a>
-        <a href="#">Manage Inventory</a>
-        <a href="#">Renewal</a>
-        <a href="#">Log out</a>
-    </nav>
-</header>
+<nav>
+     <a href="dashboard.html">Dashboard</a>
+     <a href="orders.html">Orders</a>
+     <a href="menu.html" class="active">Manage Menu</a>
+     <a href="inventory.html">Manage Inventory</a>
+     <a href="renewal.html">Renewal</a>
+     <a href="dashboard.html">Log out</a>
+</nav>
 
-<!-- MAIN PAGE -->
-<main class="main">
+</header>
+<main class="main">             <!-- main page-->
     <h1>Menu Page</h1>
 
     <button id="addMenu" class="add-menu-btn">Add Menu item +</button>
     <div class="page-container">
-
-        <!-- STORE LIST -->
-        <aside class="store-panel">
+        <aside class="store-panel">        <!-- store selection panel -->
             <h2>List of stores</h2>
 
             <div class="store-item selected">
@@ -40,13 +37,10 @@
                 <span class="arrow">▼</span>
             </div>
         </aside>
+        <section class="menu-grid">       <!-- menu items grid -->
 
-        <!-- MENU GRID -->
-        <section class="menu-grid">
-
-            <!-- Example Card (repeat for items) -->
-            <div class="menu-card">
-                <img class="menu-img" src="steamChicken.jpg" alt="Steamed chicken rice">
+            <div class="menu-card">               <!-- menu card  1 -->
+                <img class="menu-img" src="../img/steamChicken.jpg" alt="Steamed chicken rice">
                 <h3>Steamed chicken rice</h3>
 
                 <div class="footer">
@@ -56,8 +50,8 @@
                 </div>
             </div>
 
-            <div class="menu-card">
-                <img class="menu-img" src="roastedChicken.jpg" alt="Roasted chicken rice">
+            <div class="menu-card">          <!-- menu card 2 -->
+                <img class="menu-img" src="../img/roastedChicken.jpg" alt="Roasted chicken rice">
                 <h3>Roasted chicken rice</h3>
 
                 <div class="footer">
@@ -67,8 +61,8 @@
                 </div>
             </div>
 
-            <div class="menu-card">
-                <img class="menu-img" src="CrispyChicken.jpg" alt="Golden crispy chicken rice">
+            <div class="menu-card">       <!-- menu card 3 -->
+                <img class="menu-img" src="../img/CrispyChicken.jpg" alt="Golden crispy chicken rice">
                 <h3>Golden Crispy chicken rice</h3>
 
                 <div class="footer">
@@ -78,8 +72,8 @@
                 </div>
             </div>
 
-            <div class="menu-card">
-                <img class="menu-img" src="DrumstickRice.jpeg" alt="Chicken Drumstick rice">
+            <div class="menu-card">    <!-- menu card 4 -->
+                <img class="menu-img" src="../img/DrumstickRice.jpeg" alt="Chicken Drumstick rice">
                 <h3>Chicken Drumstick rice</h3>
 
                 <div class="footer">
@@ -89,8 +83,8 @@
                 </div>
             </div>
 
-            <div class="menu-card">
-                <img class="menu-img" src="soyChicken.jpg" alt="Soy chicken rice">
+            <div class="menu-card">   <!-- menu card 5 -->
+                <img class="menu-img" src="../img/soyChicken.jpg" alt="Soy chicken rice">
                 <h3>Soy chicken rice</h3>
 
                 <div class="footer">
@@ -99,9 +93,9 @@
                     <span class="status inactive">● Inactive</span>
                 </div>
             </div>
-
-            <div class="menu-card">
-                <img class="menu-img" src="wholeChicken.jpeg" alt="Whole chicken">
+ 
+            <div class="menu-card">   <!-- menu card 6 -->
+                <img class="menu-img" src="../img/wholeChicken.jpeg" alt="Whole chicken">
                 <h3>Whole chicken</h3>
 
                 <div class="footer">
@@ -110,7 +104,6 @@
                     <span class="status active">● Active</span>
                 </div>
             </div>
-
         </section>
     </div>
 
@@ -162,6 +155,6 @@
     </div>
 </div>
 
-<script src="menu.js"></script>
+<script src="../js/menu.js"></script>
 </body>
 </html>

@@ -8,7 +8,6 @@ body {
     background: #f6f6f6;
 }
 
-/* Navbar */
 .navbar {
     background: #3e8f7a;
     color: white;
@@ -29,7 +28,6 @@ body {
     border-bottom: 3px solid white;
 }
 
-/* Container */
 .container {
     padding: 30px;
 }
@@ -38,7 +36,6 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* Controls */
 .controls {
     display: flex;
     justify-content: space-between;
@@ -72,7 +69,6 @@ h1 {
     border-radius: 4px;
 }
 
-/* Table */
 table {
     width: 100%;
     border-collapse: collapse;
@@ -93,7 +89,6 @@ select {
     padding: 6px;
 }
 
-/* Status */
 .status {
     padding: 6px 12px;
     font-weight: bold;
@@ -112,11 +107,105 @@ select {
     background: #f28c8c;
 }
 
-/* Buttons */
 .edit-btn {
     background: #3e8f7a;
     color: white;
     border: none;
     padding: 8px 14px;
     cursor: pointer;
+}
+.modal-overlay{
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-overlay.hidden{
+  display: none;
+}
+
+.modal-box{
+  width: 760px;
+  background: #eee;
+  border: 2px solid #333;
+}
+
+.modal-box.small{
+  width: 680px;          
+}
+
+.modal-header{
+  background: #3e8f7a;
+  color: white;
+  font-weight: 800;
+  font-size: 34px;
+  padding: 18px 22px;
+  border-bottom: 2px solid #333;
+}
+
+.modal-body{
+  padding: 22px;
+}
+
+.form-group{
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.form-group label{
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.form-group input{
+  height: 44px;
+  font-size: 20px;
+  padding: 8px 12px;
+  border: 1px solid #777;
+  background: #fff;
+}
+
+.form-row{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.form-row .form-group{
+  grid-template-columns: 180px 1fr;
+  margin-bottom: 0;
+}
+
+.modal-actions{
+  display: flex;
+  justify-content: flex-end;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.cancel-btn{
+  background: #bdbdbd;
+  color: white;
+  border: 1px solid #555;
+  padding: 10px 26px;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.save-btn{
+  background: #3e8f7a;
+  color: white;
+  border: 1px solid #1f4b40;
+  padding: 10px 32px;
+  font-size: 22px;
+  font-weight: 800;
+  cursor: pointer;
 }

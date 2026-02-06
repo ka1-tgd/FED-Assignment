@@ -3,31 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Renewal</title>
-    <link rel="stylesheet" href="renewal.css">
+    <link rel="stylesheet" href="../css/renewal.css">
 </head>
-
 <body>
-
-<!-- TOP NAV BAR -->
-<header class="navbar">
+<header class="navbar">        <!-- top navigation -->
     <div class="logo">Management page</div>
-    <nav>
-        <a href="#">Manage Menu</a>
-        <a href="#">Manage Inventory</a>
-        <a href="#" class="active">Renewal</a>
-        <a href="#">Log out</a>
-    </nav>
+<nav>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="orders.html">Orders</a>
+      <a href="menu.html">Manage Menu</a>
+      <a href="inventory.html">Manage Inventory</a>
+      <a href="renewal.html" class="active">Renewal</a>
+      <a href="dashboard.html">Log out</a>
+</nav>
+
 </header>
 
-<!-- MAIN CONTENT -->
+<!-- main content -->
 <main class="main">
-
-    <!-- PAGE TITLE -->
     <h1 class="page-title">Renewal</h1>
-
-    <!-- CURRENT RENTAL AGREEMENT -->
-    <section class="agreement-section">
-
+    <section class="agreement-section">           <!-- current rental -->
         <div class="section-header">
             <h2>Current Rental Agreement</h2>
 
@@ -36,7 +31,6 @@
                 <span class="arrow">▼</span>
             </button>
         </div>
-
         <div class="agreement-box">
             <div class="agreement-row">
                 Stall Name: VeryNice Chicken rice
@@ -58,9 +52,7 @@
             </div>
         </div>
     </section>
-
-    <!-- RENTAL AGREEMENT HISTORY -->
-    <section class="history-section">
+    <section class="history-section">                 <!-- rental history -->
         <h2>Rental Agreement History</h2>
 
         <table class="history-table">
@@ -73,7 +65,6 @@
                     <th>Status</th>
                 </tr>
             </thead>
-
             <tbody>
                 <tr>
                     <td>023-TSU12</td>
@@ -85,8 +76,6 @@
             </tbody>
         </table>
     </section>
-
 </main>
-
 </body>
 </html>

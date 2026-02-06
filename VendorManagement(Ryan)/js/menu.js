@@ -1,6 +1,3 @@
-// Placeholder for future interactivity
-// Example: toggle active/inactive, pagination, store switching, etc.
-
 console.log("Menu page loaded");
 const addMenuBtn = document.getElementById("addMenu");
 const modal = document.getElementById("menuModal");
@@ -14,7 +11,7 @@ cancelBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-// Close when clicking outside modal
+// close when clicking outside 
 modal.addEventListener("click", (e) => {
     if (e.target === modal) {
         modal.style.display = "none";

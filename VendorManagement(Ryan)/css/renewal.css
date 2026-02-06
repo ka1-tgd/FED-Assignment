@@ -8,7 +8,6 @@ body {
     background: #ffffff;
 }
 
-/* NAVBAR */
 .navbar {
     background: #3e8f7a;
     padding: 15px 25px;
@@ -31,12 +30,10 @@ body {
     border-radius: 2px;
 }
 
-/* MAIN */
 .main {
     padding: 30px 40px;
 }
 
-/* PAGE TITLE */
 .page-title {
     font-size: 32px;
     font-weight: bold;
@@ -55,7 +52,6 @@ body {
     margin-top: 6px;
 }
 
-/* SECTION HEADER */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -67,7 +63,6 @@ body {
     font-size: 26px;
 }
 
-/* LOCATION BUTTON */
 .location-btn {
     background: #3e8f7a;
     color: white;
@@ -82,7 +77,6 @@ body {
     margin-left: 10px;
 }
 
-/* AGREEMENT BOX */
 .agreement-box {
     border: 1px solid #333;
     background: #efefef;
@@ -99,7 +93,6 @@ body {
     border-bottom: none;
 }
 
-/* STATUS ROW */
 .status-row {
     display: flex;
     justify-content: space-between;
@@ -111,7 +104,6 @@ body {
     font-weight: bold;
 }
 
-/* REQUEST BUTTON */
 .request-btn {
     background: #3e8f7a;
     color: white;
@@ -122,12 +114,10 @@ body {
     cursor: pointer;
 }
 
-/* HISTORY SECTION */
 .history-section h2 {
     margin-bottom: 15px;
 }
 
-/* TABLE */
 .history-table {
     width: 100%;
     border-collapse: collapse;
