@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoHawker Rewards</title>
+    <link rel="stylesheet" href="rewards.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="nav-container">
+            <h1 class="logo">Eco<span>Hawker</span></h1>
+            <div class="points-badge">Points: <span id="point-balance">450</span></div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        
+        <section class="impact-section">
+            <h2>Your Eco-Impact</h2>
+            
+            <div class="stats-container">
+                <div class="stat-text">
+                    <p>You've had</p>
+                    <span class="stat-number">29</span>
+                    <p>Plastic-free orders</p>
+                </div>
+
+                <div class="badge-wrapper">
+                    <div class="star-circle">
+                        <span class="star-icon">★</span>
+                    </div>
+                    <p class="badge-caption">You've saved 2.07kg of single-use plastics.</p>
+                </div>
+
+                <div class="stat-text">
+                    <p>You've used BYO</p>
+                    <span class="stat-number">17</span>
+                    <p>times</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="vouchers-section">
+            <h3>Redeem Vouchers</h3>
+            <div class="cards-grid">
+                
+                <article class="voucher-card">
+                    <h4>$1.00 Off</h4>
+                    <p class="subtext">Prevents single use items</p>
+                    <button class="btn-redeem" onclick="redeemReward(100, '$1.00 Off')">Redeem</button>
+                    <div class="card-bar"></div>
+                </article>
+
+                <article class="voucher-card">
+                    <h4>Free Drink</h4>
+                    <p class="subtext">Prevents single use items</p>
+                    <button class="btn-redeem" onclick="redeemReward(250, 'Free Drink')">Redeem</button>
+                    <div class="card-bar"></div>
+                </article>
+            </div>
+        </section>
+
+        <section class="bonus-section">
+            <h3>Sustainability Bonus</h3>
+            <div class="bonus-box" id="bonus-box">
+                <div class="bonus-info">
+                    <span class="status-label">Status:</span>
+                    <span id="status-text" class="status-value">Standard</span>
+                </div>
+                <button id="eco-toggle" class="btn-toggle">Activate Eco-Mode</button>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="rewards.js"></script>
+</body>
+</html>
