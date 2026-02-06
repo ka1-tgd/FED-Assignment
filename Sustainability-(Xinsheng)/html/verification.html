@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BYO Verification | EcoHawker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .verification-container {
+            background: #a9d1c1;
+            border-radius: 40px;
+            padding: 40px;
+            max-width: 500px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .verify-title { color: #2d6a4f; font-size: 2rem; margin-bottom: 30px; }
+        .detail-row { font-size: 1.3rem; font-weight: 500; margin: 10px 0; }
+        
+        .discount-pill {
+            background: #74c69d;
+            color: #1b4332;
+            padding: 8px 25px;
+            border-radius: 20px;
+            display: inline-block;
+            font-weight: bold;
+            margin: 20px 0;
+        }
+        
+        .qr-large {
+            background: white;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .status-text { font-size: 1.5rem; font-weight: bold; color: #000; }
+        
+        .btn-header-exit { background: #74c69d; color: #1b4332; border: none; padding: 5px 20px; border-radius: 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-container">
+            <span class="logo">BYO Order Verification</span>
+            <button class="btn-header-exit" onclick="location.href='home.html'">Exit</button>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <h1 class="verify-title">BYO Order Verification</h1>
+        
+        <div class="verification-container">
+            <div class="detail-row">Stall: Tian Tian Chicken Rice</div>
+            <div class="detail-row">Item : Hainanese Chicken Rice</div>
+            <div class="detail-row">Order ID : #1159</div>
+            
+            <div class="discount-pill">Discount applied : - $0.10</div>
+            
+            <br>
+            <div class="qr-large">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=BYOConfirmed1159" alt="QR Code">
+            </div>
+            
+            <div class="status-text">Status: BYO Confirmed</div>
+        </div>
+    </main>
+</body>
+</html>

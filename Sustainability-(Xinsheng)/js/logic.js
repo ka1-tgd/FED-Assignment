@@ -38,3 +38,15 @@ function updateStorage() {
 function addToCart(itemName) {
     alert(`Added to Cart: ${itemName}\n\n(This would normally open the checkout page)`);
 }
+
+
+// Logic for awarding points based on packaging selection
+function handlePackagingPoints(pointValue) {
+    if (pointValue > 0) {
+        userPoints += pointValue;
+        updateStorage();
+        // This makes sure the new points show up when you go back to the Home page
+    }
+}
+
+// In packaging.html, you can trigger this when "Add to Cart" is clicked:
