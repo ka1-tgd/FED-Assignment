@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surplus Sales | EcoHawker</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        /* Hero Section */
+        .surplus-hero {
+            background: linear-gradient(rgba(27, 67, 50, 0.8), rgba(27, 67, 50, 0.8)), url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80');
+            background-size: cover; background-position: center; color: white;
+            padding: 60px 20px; border-radius: 15px; text-align: center; margin-bottom: 40px;
+        }
+        .timer-box { background: rgba(255, 255, 255, 0.2); padding: 15px 30px; border-radius: 10px; display: inline-block; margin-top: 20px; border: 1px solid rgba(255,255,255,0.4); }
+        .countdown { font-size: 2rem; font-weight: bold; color: #ffcf56; }
+
+        /* Food Grid */
+        .food-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+        .food-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.2s; border: 1px solid #eee; }
+        .food-card:hover { transform: translateY(-5px); }
+        .food-img { width: 100%; height: 180px; object-fit: cover; background-color: #ddd; }
+        .card-body { padding: 20px; }
+        .stall-name { font-size: 0.8rem; color: #666; text-transform: uppercase; letter-spacing: 1px; }
+        .food-name { font-size: 1.2rem; color: #1b4332; margin: 5px 0; }
+        .price-row { display: flex; align-items: center; gap: 10px; margin: 10px 0; }
+        .new-price { color: #d90429; font-weight: bold; font-size: 1.2rem; }
+        .old-price { text-decoration: line-through; color: #999; font-size: 0.9rem; }
+        .stock-badge { background: #fff3cd; color: #856404; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; display: inline-block; margin-bottom: 15px; }
+        
+        .btn-add { width: 100%; background: #2d6a4f; color: white; border: none; padding: 12px; border-radius: 8px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
+        .btn-add:hover { background: #1b4332; }
+
+        /* Footer */
+        .site-footer { margin-top: 60px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
+        .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .main-header .nav-container { flex-direction: column; gap: 15px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="nav-container">
+            <a href="home.html" class="logo">Eco<span>Hawker</span></a>
+            <nav class="nav-links">
+                <a href="home.html">Home</a>
+                <a href="food-surplus.html" class="active">Surplus Sales</a>
+                <a href="redeem.html">Redeem</a>
+                <a href="history.html">History</a>
+            </nav>
+            <div class="points-badge">Points: <span id="point-balance">450</span></div>
+        </div>
+    </header>
+
+    <main class="content-wrapper">
+        <section class="surplus-hero">
+            <h1>Save Food, Save Money</h1>
+            <p>Grab delicious hawker food at 50% off before closing time!</p>
+            <div class="timer-box">
+                <div>Flash Sale Ends In:</div>
+                <div class="countdown" id="countdown-timer">02:45:00</div>
+            </div>
+        </section>
+
+        <h2 style="text-align: left; border-left: 5px solid #2d6a4f; padding-left: 15px;">Available Now</h2>
+        
+        <div class="food-grid">
+            
+            <article class="food-card">
+                <img src="https://onehappybite.com/wp-content/uploads/2025/04/DSC05821-2.jpg" class="food-img" alt="Chicken Rice">
+                <div class="card-body">
+                    <div class="stall-name">Tian Tian Chicken Rice</div>
+                    <h3 class="food-name">Roasted Chicken Rice Set</h3>
+                    <div class="price-row">
+                        <span class="new-price">$2.50</span>
+                        <span class="old-price">$5.00</span>
+                    </div>
+                    <div class="stock-badge">⚡ Only 3 left</div>
+                    <button class="btn-add" onclick="addToCart('Roasted Chicken Rice Set')">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://woonheng.com/wp-content/uploads/2020/10/Curry-Laksa-scaled.jpg" class="food-img" alt="Laksa">
+                <div class="card-body">
+                    <div class="stall-name">328 Katong Laksa</div>
+                    <h3 class="food-name">Laksa (Large)</h3>
+                    <div class="price-row">
+                        <span class="new-price">$3.00</span>
+                        <span class="old-price">$6.00</span>
+                    </div>
+                    <div class="stock-badge">⚡ Only 1 left</div>
+                    <button class="btn-add" onclick="addToCart('Laksa (Large)')">Add to Cart</button>
+                </div>
+            </article>
+
+            <article class="food-card">
+                <img src="https://nomadette.com/wp-content/uploads/2025/01/Nasi-Lemak.jpg" class="food-img" alt="Nasi Lemak">
+                <div class="card-body">
+                    <div class="stall-name">Selera Rasa</div>
+                    <h3 class="food-name">Royal Nasi Lemak</h3>
+                    <div class="price-row">
+                        <span class="new-price">$3.50</span>
+                        <span class="old-price">$7.00</span>
+                    </div>
+                    <div class="stock-badge">⚡ 5 left</div>
+                    <button class="btn-add" onclick="addToCart('Royal Nasi Lemak')">Add to Cart</button>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-links">
+            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
+        </div>
+        <p>&copy; 2026 EcoHawker Management System.</p>
+    </footer>
+
+    <script src="logic.js"></script>
+    <script>
+        function startTimer(duration, display) {
+            var timer = duration, hours, minutes, seconds;
+            setInterval(function () {
+                hours = parseInt(timer / 3600, 10);
+                minutes = parseInt((timer % 3600) / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+                hours = hours < 10 ? "0" + hours : hours;
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+                display.textContent = hours + ":" + minutes + ":" + seconds;
+                if (--timer < 0) timer = duration;
+            }, 1000);
+        }
+        window.onload = function () {
+            var display = document.querySelector('#countdown-timer');
+            if(display) startTimer(9900, display);
+        };
+    </script>
+</body>
+</html>

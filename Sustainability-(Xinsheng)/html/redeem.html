@@ -6,7 +6,6 @@
     <title>Redeem | EcoHawker</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Card Layout */
         .cards-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 20px; }
         .card { background: white; width: 220px; padding: 20px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); position: relative; overflow: hidden; transition: transform 0.2s; }
         .card:hover { transform: translateY(-5px); }
@@ -14,15 +13,16 @@
         .card h4 { color: #1b4332; font-size: 1.4rem; margin-top: 0; margin-bottom: 5px; }
         .card p { color: #888; font-size: 0.9rem; margin-bottom: 20px; }
 
-        /* --- NEW: Footer Styles --- */
+        /* Footer */
         .site-footer { margin-top: 80px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
-        .site-footer a:hover { text-decoration: underline; }
-        .footer-links { margin-bottom: 20px; }
 
-        /* Mobile Layout */
+        /* --- MOBILE RESPONSIVE RULES --- */
         @media (max-width: 768px) {
+            /* Stack Nav Links vertically */
             .main-header .nav-container { flex-direction: column; gap: 15px; }
+            
+            /* Make cards full width for easier tapping */
             .card { width: 100%; max-width: 300px; } 
         }
     </style>
@@ -33,6 +33,7 @@
             <a href="home.html" class="logo">Eco<span>Hawker</span></a>
             <nav class="nav-links">
                 <a href="home.html">Home</a>
+                <a href="food-surplus.html">Surplus Sales</a>
                 <a href="redeem.html" class="active">Redeem</a>
                 <a href="history.html">History</a>
             </nav>
@@ -70,9 +71,7 @@
 
     <footer class="site-footer">
         <div class="footer-links">
-            <a href="home.html">Home</a> | 
-            <a href="redeem.html">Redeem</a> | 
-            <a href="history.html">History</a>
+            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
         </div>
         <p>&copy; 2026 EcoHawker Management System.</p>
     </footer>

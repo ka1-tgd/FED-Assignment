@@ -23,7 +23,7 @@
 
         /* Table Styles */
         .table-container { overflow-x: auto; }
-        .styled-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-top: 20px; }
+        .styled-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-top: 20px; min-width: 500px; }
         .styled-table thead { background: #2d6a4f; color: white; }
         .styled-table th, .styled-table td { padding: 15px; text-align: left; }
         .styled-table tbody tr { border-bottom: 1px solid #ddd; }
@@ -32,21 +32,34 @@
         .completed { background: #d8f3dc; color: #2d6a4f; }
         .pending { background: #fff3cd; color: #856404; }
 
-        /* --- NEW: Info Cards (Fills white space) --- */
+        /* Info Card */
         .info-card { background: #e8f5e9; padding: 20px; border-radius: 15px; margin-top: 30px; border-left: 5px solid #2d6a4f; }
         .info-card h4 { margin-top: 0; color: #1b4332; }
         .info-card p { margin-bottom: 0; color: #333; font-size: 0.9rem; }
 
-        /* --- NEW: Footer Styles --- */
+        /* Footer */
         .site-footer { margin-top: 60px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
-        .site-footer a:hover { text-decoration: underline; }
         .footer-links { margin-bottom: 20px; }
 
-        /* Mobile Responsive */
+        /* --- MOBILE RESPONSIVE RULES --- */
         @media (max-width: 900px) {
+            /* Stack Nav Links vertically */
+            .main-header .nav-container { flex-direction: column; gap: 15px; }
+            
+            /* Stack Main Content vertically */
             .page-grid { flex-direction: column; }
+            
+            /* Adjust badges to 3 per row */
             .badge-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust badges to 2 per row on very small screens */
+            .badge-grid { grid-template-columns: repeat(2, 1fr); }
+            
+            /* Stack Stats vertically */
+            .stats-row { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
@@ -56,6 +69,7 @@
             <a href="home.html" class="logo">Eco<span>Hawker</span></a>
             <nav class="nav-links">
                 <a href="home.html" class="active">Home</a>
+                <a href="food-surplus.html">Surplus Sales</a>
                 <a href="redeem.html">Redeem</a>
                 <a href="history.html">History</a>
             </nav>
@@ -67,7 +81,6 @@
         <h2>Welcome Back!</h2>
         
         <div class="page-grid">
-            
             <div class="left-column">
                 <div style="display: flex; justify-content: center; margin-bottom: 30px;">
                     <div style="width: 120px; height: 120px; background: #2d6a4f; border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 6px solid #74c69d; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
@@ -75,7 +88,7 @@
                     </div>
                 </div>
 
-                <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px;">
+                <div class="stats-row" style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px;">
                     <div style="text-align: center;">
                         <span style="font-size: 2.5rem; font-weight: bold; color: #40916c;">29</span>
                         <p style="margin-top: 5px; color: #333;">Plastic-Free Orders</p>
@@ -117,12 +130,6 @@
                                     <td style="color: #2d6a4f; font-weight: bold;">+20</td>
                                     <td><span class="status-pill completed">Completed</span></td>
                                 </tr>
-                                <tr>
-                                    <td>02 Feb 2026</td>
-                                    <td>Pending Verification</td>
-                                    <td style="color: #856404; font-weight: bold;">+50</td>
-                                    <td><span class="status-pill pending">Pending</span></td>
-                                </tr>
                             </tbody>
                         </table>
                     </div>
@@ -136,7 +143,6 @@
 
             <aside class="right-sidebar">
                 <h3 style="color: #1b4332; border-bottom: 2px solid #74c69d; padding-bottom: 10px; margin-top: 0;">Achievements</h3>
-                
                 <div class="badge-grid">
                     <div class="badge-item">
                         <span class="badge-icon">🌱</span>
@@ -169,7 +175,7 @@
                         <p class="badge-desc">Order 7 days in a row.</p>
                     </div>
                 </div>
-
+                
                 <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
                     <h4 style="margin: 0 0 10px 0; color: #2d6a4f;">💡 Did You Know?</h4>
                     <p style="font-size: 0.85rem; color: #666; line-height: 1.4;">
@@ -177,15 +183,12 @@
                     </p>
                 </div>
             </aside>
-
         </div>
     </main>
 
     <footer class="site-footer">
         <div class="footer-links">
-            <a href="home.html">Home</a> | 
-            <a href="redeem.html">Redeem</a> | 
-            <a href="history.html">History</a> 
+            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
         </div>
         <p>&copy; 2026 EcoHawker Management System.</p>
     </footer>

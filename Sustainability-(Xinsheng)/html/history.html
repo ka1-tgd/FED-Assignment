@@ -18,14 +18,13 @@
         .completed { background: #d8f3dc; color: #2d6a4f; }
         .used { background: #e9ecef; color: #666; }
 
-        /* --- NEW: Footer Styles --- */
+        /* Footer */
         .site-footer { margin-top: 80px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
-        .site-footer a:hover { text-decoration: underline; }
-        .footer-links { margin-bottom: 20px; }
-        
-        /* Mobile Layout */
+
+        /* --- MOBILE RESPONSIVE RULES --- */
         @media (max-width: 768px) {
+            /* Stack Nav Links vertically */
             .main-header .nav-container { flex-direction: column; gap: 15px; }
         }
     </style>
@@ -36,6 +35,7 @@
             <a href="home.html" class="logo">Eco<span>Hawker</span></a>
             <nav class="nav-links">
                 <a href="home.html">Home</a>
+                <a href="food-surplus.html">Surplus Sales</a>
                 <a href="redeem.html">Redeem</a>
                 <a href="history.html" class="active">History</a>
             </nav>
@@ -94,9 +94,7 @@
 
     <footer class="site-footer">
         <div class="footer-links">
-            <a href="home.html">Home</a> | 
-            <a href="redeem.html">Redeem</a> | 
-            <a href="history.html">History</a>
+            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
         </div>
         <p>&copy; 2026 EcoHawker Management System.</p>
     </footer>

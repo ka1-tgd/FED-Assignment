@@ -33,3 +33,8 @@ function updateStorage() {
         pointsDisplay.innerText = userPoints;
     }
 }
+
+// Add to Cart Logic
+function addToCart(itemName) {
+    alert(`Added to Cart: ${itemName}\n\n(This would normally open the checkout page)`);
+}
