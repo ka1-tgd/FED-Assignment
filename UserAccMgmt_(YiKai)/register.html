@@ -23,13 +23,18 @@
         <main class="main-content">
             <h1>Sign Up</h1>
 
-            <form class="enter-info">
+            <form id="signup-form" class="enter-info">
                 <div class="enter-info-row">
                     <label for="acc-type">Account:</label>
                     <div class="account-type">
-                        <button class="type-button">Customer</button>
-                        or
-                        <button class="type-button">Hawker</button>
+                        <label class="acc-type-choice">
+                            <input type="radio" name="userType" value="Customer" required>
+                            Customer
+                        </label>
+                        <label class="acc-type-choice">
+                            <input type="radio" name="userType" value="Hawker" required>
+                            Hawker
+                        </label>
                     </div>
                 </div>
 
@@ -47,9 +52,9 @@
                     <label for="confirm-password">Confirm Password:</label>
                     <input type="password" id="confirm-password" required>
                 </div>
-            </form>
 
-            <button type="submit" class="button">Sign Up</button>
+                <button type="submit" class="button">Sign Up</button>
+            </form>
         </main>
 
         <!--Footer-->
@@ -59,6 +64,6 @@
         </footer>
 
         <!--Link to script.js-->
-        <script src="script.js"></script>
+        <script type="module" src="js/script.js"></script>
     </body>
 </html>
