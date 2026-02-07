@@ -301,3 +301,133 @@ body {
 .footer-adjust {
     margin-top: 150px;
 }
+
+/*Media queries*/
+@media (max-width: 576px) {
+
+    /*Header*/
+    .header-box {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+        gap: 8px;
+    }
+
+    .header-nav {
+        gap: 12px;
+        font-size: 14px;
+    }
+
+    .header-title {
+        font-size: 18px;
+    }
+
+    .header-nav-link,
+    .active {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    /*Main content*/
+    .main-content {
+        margin-top: 40px;
+        padding: 0 16px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+
+    /*Profile selection*/
+    .profile-select {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .profile-card img {
+        max-width: 150px;
+    }
+
+    /*Buttons*/
+    .button {
+        width: 100%;
+        max-width: 170px;
+        text-align: center;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+        justify-self: center;
+    }
+
+    /*Log in and sign up*/
+    .enter-info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+    }
+
+    input {
+        width: 100%;
+    }
+
+    /*Account*/
+    .account-card {
+        padding: 20px;
+    }
+
+    .account-info {
+        width: 100%;
+    }
+
+    .acc-info-row {
+        align-items: flex-start;
+        gap: 4px;
+    }
+
+    .profile-pic {
+        max-width: 120px;
+    }
+
+    .user-actions {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    /*Home Pages*/
+    .homepage-actions {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .homepage-card {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*Order*/
+    .order-card {
+        width: 50%;
+        justify-self: center;
+    }
+
+    .order-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /*Footer*/
+    .logo {
+        max-width: 250px;
+    }
+
+    .copyright {
+        font-size: 12px;
+        padding: 10px;
+    }
+}
