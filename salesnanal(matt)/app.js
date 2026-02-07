@@ -8,7 +8,7 @@
     if (href === path) a.classList.add("active");
   });
 
-  // "Log out" just goes back to welcome page (simple front-end behaviour)
+  
   const logout = document.querySelector('[data-logout="true"]');
   if (logout) {
     logout.addEventListener("click", (e) => {
