@@ -94,7 +94,7 @@ function updateTotal() {
     });
 
     const grandTotal = currentItemTotal + cartTotal;
-    const itemPriceTag = document.querySelector('.item-price');
+    const itemPriceTag = document.querySelector('#current-item-customization .item-price');
     const subTotalTag = document.querySelector('.sub-total h3');
 
     if (itemPriceTag) {
@@ -120,11 +120,8 @@ if (addItemBtn) {
         const price = document.querySelector('.item-price').textContent;
 
         const newItem = { name: foodName, quantity: qty, total: price };
-
         let masterCart = JSON.parse(localStorage.getItem("masterCart")) || [];
-
         masterCart.push(newItem);
-
         localStorage.setItem("masterCart", JSON.stringify(masterCart));
 
         const hc = localStorage.getItem("lastHC");
@@ -153,42 +150,36 @@ if (finalOrderBtn) {
     });
 }
 
+
+
 function renderPreviousItems() {
-    const container = document.getElementById('previous-items-container');
+    const container = document.getElementById('cart-items-container');
     const masterCart = JSON.parse(localStorage.getItem("masterCart")) || [];
     
-    if (masterCart.length === 0) {
-        container.innerHTML = ""; // Don't show anything if cart is empty
-        return;
-    }
+    // Clear the container first so we don't double-render
+    container.innerHTML = ""; 
 
-    let html = "";
-    // Loop through everything already in the cart
     masterCart.forEach((item, index) => {
-        html += `
-            <div class="order-item-block" style="opacity: 0.8; border-bottom: 2px dashed #ccc; margin-bottom: 20px;">
-                <div style="display: flex; justify-content: space-between;">
-                    <h3>${item.name} (Added)</h3>
-                    <button onclick="removeItem(${index})" style="background:red; color:white; border:none; border-radius:5px; cursor:pointer;">X</button>
-                </div>
-                <div class="quantity">
-                    <h4>Qty: ${item.quantity}</h4>
-                </div>
-                <h4 class="item-price">${item.total}</h4>
+        const itemBlock = document.createElement('div');
+        itemBlock.className = 'order-item-block';
+        itemBlock.innerHTML = `
+            <div style="min-width: 240px;">
+                <h3>${item.name}</h3>
+                <button onclick="removeItem(${index})" style="background-color: red; color:white; border:none; padding:5px 10px; border-radius:4px; cursor:pointer;">Remove</button>
             </div>
+            <p>Quantity: ${item.quantity}</p>
+            <h4 class="item-price">${item.total}</h4>
         `;
+        container.appendChild(itemBlock);
     });
-    
-    container.innerHTML = html + "<hr><h3>Customize New Item:</h3>";
 }
 
-// Function to let you delete an item if you change your mind
 window.removeItem = function(index) {
     let masterCart = JSON.parse(localStorage.getItem("masterCart")) || [];
-    masterCart.splice(index, 1); // Remove item at this index
+    masterCart.splice(index, 1);
     localStorage.setItem("masterCart", JSON.stringify(masterCart));
-    renderPreviousItems(); // Redraw list
-    updateTotal(); // Update price
+    renderPreviousItems();
+    updateTotal();
 };
 
 renderPreviousItems();
