@@ -20,37 +20,20 @@
 
             <div class="queue-number-box">
                 <h2>Here is your Queue Number:</h2>
-                <h2 class="queue-number">110</h2>
-                <h2>Status: Preparing</h2>
+                <h2 id="display-queue-number" class="queue-number">--</h2>
+                <h2>Status: <span id="order-status">Preparing</span></h2>
                 <a href="queue-dashboard.html" style="text-decoration: none;">
                     <button class="check-queue-button">Check Queue</button>
                 </a>
             </div>
+
         </div>
 
         <div class="order-detail-box">
             <h2>Your orders:</h2>
 
-            <div class="order-detail">
-                <h3>
-                    Food Stall: Delicious Chicken Rice<br>
-                    Stall ID: 14<br>(DINE IN)
-                </h3>
-
-                <h3>
-                    Order Item (1): Roasted Chicken Rice
-                </h3>
-                <h3 class="order-item-detail">size - normal<br>qty - x1</h3>
-                <h3 class="order-item-price"><br>$3.50</h3>
-
-                <h3>
-                    Order Item (2): Roasted Chicken Rice
-                </h3>
-                <h3 class="order-item-detail">size - up-size<br>qty - x1</h3>
-                <h3 class="order-item-price"><br>$3.80</h3>
-
-                <h3>Sub Total: $7.30</h3>
-                <h3>Payment Method: Bank Transfer</h3>
+            <div id="order-items-container" class="order-detail">
+                <p>Loading order details...</p>
             </div>
 
             <button class="cancel-order-button">Cancel Order</button>
