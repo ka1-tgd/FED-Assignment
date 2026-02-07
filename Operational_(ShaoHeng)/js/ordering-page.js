@@ -156,7 +156,6 @@ function renderPreviousItems() {
     const container = document.getElementById('cart-items-container');
     const masterCart = JSON.parse(localStorage.getItem("masterCart")) || [];
     
-    // Clear the container first so we don't double-render
     container.innerHTML = ""; 
 
     masterCart.forEach((item, index) => {
