@@ -17,8 +17,10 @@
     </header>
     <main>
         <div class="ordering-box">
+            <div id="previous-container"></div>
+
             <div class="order-item-block">
-                <h3>Food Item 1</h3>
+                <h3>Food Item</h3>
 
                 <div class="size-toggle-container">
                     <div class="normal-option">
@@ -37,13 +39,14 @@
                     <button onclick="changeQuantity(1)">+</button>
                 </div>
 
-                <h4 class="item-price">Cost: $3.50</h4>
+                <h4 class="item-price">Cost: $0.00</h4>
             </div>
 
             <button class="add-item-button">add item</button>
 
             <div class="sub-total">
-                <h3>Sub Total: $3.50</h3>
+                <h3>Sub Total: $0.00</h3>
+                
                 <div class="dining-toggle-container">
                     <div class="dine-in-option">
                         <input type="radio" id="dine-in" name="dining-toggle-grp" checked>
@@ -62,11 +65,11 @@
                     </div>
                     <div class="bio-box-option">
                         <input type="radio" id="bio-box" name="packaging-toggle-grp">
-                        <label for="bio-box">Biodegradable Box ( +$0.20 ) - Earn 5 Green Pts</label>
+                        <label for="bio-box">Biodegradable Box ( +$0.20 )</label>
                     </div>
                     <div class="byo-option">
                         <input type="radio" id="byo" name="packaging-toggle-grp">
-                        <label for="byo">BYO Container ( -$0.10 ) - Earn 20 Green Pts</label>
+                        <label for="byo">BYO Container ( -$0.10 )</label>
                     </div>
                 </div>
             </div>
