@@ -9,7 +9,7 @@ body {
 }
 
 .navbar {
-    background: #3e8f7a;
+    background: #3D8D7A;
     padding: 15px 25px;
     color: white;
     display: flex;
@@ -46,7 +46,7 @@ body {
     content: "";
     width: 140px;
     height: 6px;
-    background: #3e8f7a;
+    background: #3D8D7A;
     display: block;
     border-radius: 4px;
     margin-top: 6px;

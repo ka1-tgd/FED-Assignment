@@ -1,12 +1,11 @@
-:root{
-  --green:#3e8f7a;
+*{
+  --green:#3D8D7A;
   --mint:#a9cfc7;
   --bg:#ffffff;
   --card:#f6f3f8;
   --border:#d5d2db;
   --text:#1f1f1f;
   --muted:#5b5b5b;
-
   --chip-wait:#d39a55;
   --chip-inprog:#4f8b7c;
   --chip-refreq:#cfd2d8;
