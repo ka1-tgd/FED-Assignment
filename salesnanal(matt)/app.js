@@ -16,4 +16,10 @@
       window.location.href = "index.html";
     });
   }
+  const manageBtn = document.getElementById("manageBtn");
+  if (manageBtn) {
+    manageBtn.addEventListener("click", () => {
+      window.location.href = "../VendorManagement(Ryan)/html/dashboard.html";
+    });
+  }
 })();
