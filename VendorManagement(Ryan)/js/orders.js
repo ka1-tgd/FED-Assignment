@@ -11,6 +11,7 @@ orders.sort((a, b) => Number(b.id) - Number(a.id));
 const PAGE_SIZE = 6;
 let page = 1;
 let filter = "all";
+
 function statusClass(status) {
   if (status === "Waiting for Acceptance") return "wait";
   if (status === "In Progress") return "prog";
@@ -41,10 +42,11 @@ function updateCounts() {
   const ongoing = orders.filter(o => o.status === "In Progress" || o.status === "Refund Requested").length;
 
   const w = document.getElementById("countWaiting");
-  const g = document.getElementById("countOngoing");
+  const og = document.getElementById("countOngoing");
   if (w) w.textContent = waiting;
-  if (g) g.textContent = ongoing;
+  if (og) og.textContent = ongoing;
 }
+
 function render() {
   const body = document.getElementById("ordersBody");
   if (!body) return;
@@ -68,7 +70,11 @@ function render() {
         <td>${o.time}</td>
         <td><span class="status ${sCls}">${o.status}</span></td>
         <td>
-          <button class="action-btn ${act.cls}" data-id="${o.id}" ${act.disabled ? "disabled" : ""}>
+          <button
+            class="action-btn ${act.cls}"
+            data-id="${o.id}"
+            ${act.disabled ? "disabled" : ""}
+          >
             ${act.text}
           </button>
         </td>
@@ -83,10 +89,12 @@ function render() {
   if (pageBtn) pageBtn.textContent = String(page);
   if (prevBtn) prevBtn.disabled = page === 1;
   if (nextBtn) nextBtn.disabled = page === maxPage;
+
+  updateCounts();
 }
-const filtersWrap = document.getElementById("filters");
-if (filtersWrap) {
-  filtersWrap.addEventListener("click", (e) => {
+const filtersEl = document.getElementById("filters");
+if (filtersEl) {
+  filtersEl.addEventListener("click", (e) => {
     const btn = e.target.closest(".filter-btn");
     if (!btn) return;
 
@@ -99,6 +107,8 @@ if (filtersWrap) {
   });
 }
 const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+
 if (prevBtn) {
   prevBtn.addEventListener("click", () => {
     page = Math.max(1, page - 1);
@@ -106,14 +116,12 @@ if (prevBtn) {
   });
 }
 
-const nextBtn = document.getElementById("nextBtn");
 if (nextBtn) {
   nextBtn.addEventListener("click", () => {
     page += 1;
     render();
   });
 }
-
 const ordersBody = document.getElementById("ordersBody");
 if (ordersBody) {
   ordersBody.addEventListener("click", (e) => {
@@ -123,25 +131,14 @@ if (ordersBody) {
     const id = btn.dataset.id;
     const order = orders.find(o => o.id === id);
     if (!order) return;
-
-    // Accept -> In Progress
     if (order.status === "Waiting for Acceptance") {
       order.status = "In Progress";
     }
-    // Refund -> Refunded
     else if (order.status === "In Progress" || order.status === "Refund Requested") {
       order.status = "Refunded";
     }
 
-    updateCounts();
     render();
   });
 }
-const addIngredientBtn = document.getElementById("addIngredientBtn");
-if (addIngredientBtn) {
-  addIngredientBtn.addEventListener("click", () => {
-    alert("Add Ingredient flow here");
-  });
-}
-updateCounts();
 render();

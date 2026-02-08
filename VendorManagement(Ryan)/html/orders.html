@@ -7,21 +7,24 @@
   <link rel="stylesheet" href="../css/orders.css" />
 </head>
 <body>
-<header class="navbar">                    <!-- TOP NAV BAR -->
+
+<!-- TOP NAV BAR -->
+<header class="navbar">
   <div class="logo">Management page</div>
-<nav>
+  <nav>
     <a href="dashboard.html">Dashboard</a>
     <a href="orders.html" class="active">Orders</a>
     <a href="menu.html">Manage Menu</a>
     <a href="inventory.html">Manage Inventory</a>
     <a href="renewal.html">Renewal</a>
     <a href="../../UserAccMgmt_(YiKai)/login.html">Log out</a>
-</nav>
-
+  </nav>
 </header>
 
 <main class="container">
   <h1>Order Page</h1>
+
+  <!-- Controls -->
   <div class="controls">
     <div class="filters" id="filters">
       <button class="filter-btn active" data-filter="all">All</button>
@@ -34,10 +37,11 @@
         Ongoing <span class="badge badge-green" id="countOngoing">0</span>
       </button>
     </div>
-
-    <button class="add-btn" id="addIngredientBtn">Add Ingredient +</button>
+    <!-- ✅ removed Add Ingredient button -->
   </div>
-  <table>                     <!-- order table -->
+
+  <!-- Orders Table -->
+  <table>
     <thead>
       <tr>
         <th>ID</th>
@@ -47,11 +51,10 @@
         <th>Action</th>
       </tr>
     </thead>
-    <tbody id="ordersBody">
-    </tbody>
+
+    <tbody id="ordersBody"></tbody>
   </table>
 
-  <!-- Pagination (optional, same vibe) -->
   <div class="pagination">
     <button id="prevBtn">Previous</button>
     <button class="current-page" id="pageBtn">1</button>
@@ -62,3 +65,4 @@
 <script src="../js/orders.js"></script>
 </body>
 </html>
+
