@@ -18,7 +18,7 @@
     </nav>
   </header>
 
-  <main class="page">
+  <main class="page"> 
     <div class="section-title">Sales analytics</div>
     <div class="title-underline"></div>
 
@@ -101,8 +101,8 @@
           </div>
         </div>
 
-        <!-- KPIs -->
-        <div class="kpis">
+        <!-- KPIs (key performance indicators) -->
+        <div class="kpis"> <!-- a grid (3 columns)-->
           <div class="kpi">
             <h4>Current promotion</h4>
             <div class="small">1 Chicken Rice + 1 Rojak →<br/>30% off total</div>
@@ -125,12 +125,12 @@
   <script src="app.js"></script>
   <script>
     // Scale bars to a 0-100 style chart
-    document.querySelectorAll(".bar").forEach(bar => {
-      const v = Number(bar.dataset.value);
+    document.querySelectorAll(".bar").forEach(bar => { //select all bars and create a loop
+      const v = Number(bar.dataset.value); //dataset.value reads data-value from html
       // chart inner height approx 250px after padding, so map 0-100 -> 0-250
-      const px = Math.max(6, Math.round((v / 100) * 250));
-      bar.style.height = px + "px";
+      const px = Math.max(6, Math.round((v / 100) * 250)); //maps 0-100 range to 0-250px
+      bar.style.height = px + "px"; //apply height to bar visually
     });
   </script>
-</body>
+</body> 
 </html>
