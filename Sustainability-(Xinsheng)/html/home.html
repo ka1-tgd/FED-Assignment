@@ -6,12 +6,12 @@
     <title>Home | EcoHawker</title>
     <link rel="stylesheet" href="../css/style.css">
     <style>
-        /* Layout */
+        /* --- Layout Styles --- */
         .page-grid { display: flex; gap: 40px; align-items: flex-start; margin-top: 20px; }
         .left-column { flex: 2; }
         .right-sidebar { flex: 1; background: white; padding: 25px; border-radius: 15px; border: 1px solid #ddd; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
 
-        /* Badges */
+        /* Badge Grid */
         .badge-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px; }
         .badge-item { display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 15px 5px; border-radius: 10px; cursor: pointer; min-height: 120px; transition: transform 0.2s; border: 1px solid transparent; }
         .badge-item:hover { transform: scale(1.05); background-color: #f8f9fa; border: 1px solid #e9ecef; }
@@ -21,7 +21,7 @@
         .locked { opacity: 0.6; filter: grayscale(100%); background-color: #f8f9fa; }
         .locked .badge-desc { color: #999; font-style: italic; }
 
-        /* Table & Info */
+        /* Table Styles */
         .table-container { overflow-x: auto; }
         .styled-table { width: 100%; border-collapse: collapse; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.05); margin-top: 20px; min-width: 500px; }
         .styled-table thead { background: #2d6a4f; color: white; }
@@ -31,7 +31,8 @@
         .status-pill { padding: 5px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; }
         .completed { background: #d8f3dc; color: #2d6a4f; }
         .pending { background: #fff3cd; color: #856404; }
-        
+
+        /* Info Card */
         .info-card { background: #e8f5e9; padding: 20px; border-radius: 15px; margin-top: 30px; border-left: 5px solid #2d6a4f; }
         .info-card h4 { margin-top: 0; color: #1b4332; }
         .info-card p { margin-bottom: 0; color: #333; font-size: 0.9rem; }
@@ -39,16 +40,13 @@
         /* Footer */
         .site-footer { margin-top: 60px; background-color: #1b4332; color: white; padding: 40px 20px; text-align: center; }
         .site-footer a { color: #74c69d; text-decoration: none; margin: 0 10px; }
+        .footer-links { margin-bottom: 20px; }
 
-        /* Mobile Layout */
+        /* Mobile Responsive */
         @media (max-width: 900px) {
             .page-grid { flex-direction: column; }
             .badge-grid { grid-template-columns: repeat(3, 1fr); }
             .main-header .nav-container { flex-direction: column; gap: 15px; }
-        }
-        @media (max-width: 600px) {
-            .badge-grid { grid-template-columns: repeat(2, 1fr); }
-            .stats-row { flex-direction: column; gap: 20px; }
         }
     </style>
 </head>
@@ -62,12 +60,13 @@
                 <a href="redeem.html">Redeem</a>
                 <a href="history.html">History</a>
             </nav>
-            <div class="points-badge">Points: <span id="point-balance">Loading...</span></div>
+            <div class="points-badge">Points: <span id="point-balance">200</span></div>
         </div>
     </header>
 
     <main class="content-wrapper">
         <h2>Welcome Back!</h2>
+        
         <div class="page-grid">
             <div class="left-column">
                 <div style="display: flex; justify-content: center; margin-bottom: 30px;">
@@ -75,33 +74,56 @@
                         <span style="font-size: 60px; color: white;">★</span>
                     </div>
                 </div>
-                <div class="stats-row" style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px;">
+
+                <div style="display: flex; justify-content: center; gap: 40px; margin-bottom: 30px;">
                     <div style="text-align: center;">
                         <span style="font-size: 2.5rem; font-weight: bold; color: #40916c;">29</span>
-                        <p style="margin-top: 5px;">Plastic-Free Orders</p>
+                        <p style="margin-top: 5px; color: #333;">Plastic-Free Orders</p>
                     </div>
                     <div style="text-align: center;">
                         <span style="font-size: 2.5rem; font-weight: bold; color: #40916c;">17</span>
-                        <p style="margin-top: 5px;">BYO Containers</p>
+                        <p style="margin-top: 5px; color: #333;">BYO Containers</p>
                     </div>
                 </div>
+
                 <div style="text-align: left;">
-                    <h3 style="color: #1b4332;">Recent Activity</h3>
+                    <h3 style="color: #1b4332; margin-bottom: 10px;">Recent Activity</h3>
                     <div class="table-container">
                         <table class="styled-table">
                             <thead>
-                                <tr><th>Date</th><th>Activity</th><th>Points</th><th>Status</th></tr>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Activity</th>
+                                    <th>Points</th>
+                                    <th>Status</th>
+                                </tr>
                             </thead>
                             <tbody>
-                                <tr><td>08 Feb 2026</td><td>Plastic-Free Order</td><td style="color:#2d6a4f; font-weight:bold;">+50</td><td><span class="status-pill completed">Completed</span></td></tr>
-                                <tr><td>07 Feb 2026</td><td>Daily Eco-Login</td><td style="color:#2d6a4f; font-weight:bold;">+10</td><td><span class="status-pill completed">Completed</span></td></tr>
-                                <tr><td>03 Feb 2026</td><td>BYO Container Bonus</td><td style="color:#2d6a4f; font-weight:bold;">+20</td><td><span class="status-pill completed">Completed</span></td></tr>
+                                <tr>
+                                    <td>08 Feb 2026</td>
+                                    <td>Plastic-Free Order</td>
+                                    <td style="color: #2d6a4f; font-weight: bold;">+50</td>
+                                    <td><span class="status-pill completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>07 Feb 2026</td>
+                                    <td>Plastic-Free Order</td>
+                                    <td style="color: #2d6a4f; font-weight: bold;">+50</td>
+                                    <td><span class="status-pill completed">Completed</span></td>
+                                </tr>
+                                <tr>
+                                    <td>03 Feb 2026</td>
+                                    <td>BYO Container Bonus</td>
+                                    <td style="color: #2d6a4f; font-weight: bold;">+20</td>
+                                    <td><span class="status-pill completed">Completed</span></td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
+
                     <div class="info-card">
                         <h4>📢 Monthly Eco-Challenge</h4>
-                        <p>You are currently ranked #15. Keep going!</p>
+                        <p>This month, the top 10 users with the most BYO orders will win a $50 Hawker Voucher! You are currently ranked #15. Keep going!</p>
                     </div>
                 </div>
             </div>
@@ -109,21 +131,55 @@
             <aside class="right-sidebar">
                 <h3 style="color: #1b4332; border-bottom: 2px solid #74c69d; padding-bottom: 10px; margin-top: 0;">Achievements</h3>
                 <div class="badge-grid">
-                    <div class="badge-item"><span class="badge-icon">🌱</span><div class="badge-name">Green Starter</div><p class="badge-desc">First plastic-free order.</p></div>
-                    <div class="badge-item"><span class="badge-icon">🥡</span><div class="badge-name">BYO Hero</div><p class="badge-desc">BYO container 5 times.</p></div>
-                    <div class="badge-item"><span class="badge-icon">🥤</span><div class="badge-name">No Plastics</div><p class="badge-desc">No cutlery 10 times.</p></div>
-                    <div class="badge-item locked"><span class="badge-icon">👑</span><div class="badge-name">Eco Master</div><p class="badge-desc">Complete 50 eco-orders.</p></div>
-                    <div class="badge-item locked"><span class="badge-icon">🤝</span><div class="badge-name">Community</div><p class="badge-desc">Refer 5 friends.</p></div>
-                    <div class="badge-item locked"><span class="badge-icon">🔥</span><div class="badge-name">Streak 7</div><p class="badge-desc">Order 7 days in a row.</p></div>
+                    <div class="badge-item">
+                        <span class="badge-icon">🌱</span>
+                        <div class="badge-name">Green Starter</div>
+                        <p class="badge-desc">First plastic-free order.</p>
+                    </div>
+                    <div class="badge-item">
+                        <span class="badge-icon">🥡</span>
+                        <div class="badge-name">BYO Hero</div>
+                        <p class="badge-desc">BYO container 5 times.</p>
+                    </div>
+                    <div class="badge-item">
+                        <span class="badge-icon">🥤</span>
+                        <div class="badge-name">No Plastics</div>
+                        <p class="badge-desc">No cutlery 10 times.</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <span class="badge-icon">👑</span>
+                        <div class="badge-name">Eco Master</div>
+                        <p class="badge-desc">Complete 50 eco-orders.</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <span class="badge-icon">🤝</span>
+                        <div class="badge-name">Community</div>
+                        <p class="badge-desc">Refer 5 friends.</p>
+                    </div>
+                    <div class="badge-item locked">
+                        <span class="badge-icon">🔥</span>
+                        <div class="badge-name">Streak 7</div>
+                        <p class="badge-desc">Order 7 days in a row.</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
+                    <h4 style="margin: 0 0 10px 0; color: #2d6a4f;">💡 Did You Know?</h4>
+                    <p style="font-size: 0.85rem; color: #666; line-height: 1.4;">
+                        Bringing your own container saves approximately <strong>30g of plastic waste</strong> per meal. You've saved over 500g this month alone!
+                    </p>
                 </div>
             </aside>
         </div>
     </main>
 
     <footer class="site-footer">
-        <div class="footer-links"><a href="home.html">Home</a>|<a href="food-surplus.html">Surplus</a>|<a href="redeem.html">Redeem</a>|<a href="history.html">History</a></div>
-        <p>&copy; 2026 EcoHawker.</p>
+        <div class="footer-links">
+            <a href="home.html">Home</a> | <a href="food-surplus.html">Surplus Sales</a> | <a href="redeem.html">Redeem</a> | <a href="history.html">History</a>
+        </div>
+        <p>&copy; 2026 EcoHawker Management System.</p>
     </footer>
+
     <script src="logic.js"></script>
 </body>
 </html>

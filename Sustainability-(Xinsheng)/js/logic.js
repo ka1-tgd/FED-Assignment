@@ -1,17 +1,19 @@
 // 1. INITIALIZATION
-// Check if points exist; if not, start with 300
-let userPoints = localStorage.getItem('ecoPoints');
-if (userPoints === null) {
-    userPoints = 300;
+// Check for saved points. If missing or "Loading...", force it to 200.
+let storedPoints = localStorage.getItem('ecoPoints');
+let userPoints;
+
+if (!storedPoints || isNaN(storedPoints)) {
+    userPoints = 200; // Force set to 200 as requested
     localStorage.setItem('ecoPoints', userPoints);
 } else {
-    userPoints = parseInt(userPoints);
+    userPoints = parseInt(storedPoints);
 }
 
-// Load dynamic history (new real actions)
+// Load History
 let userHistory = JSON.parse(localStorage.getItem('ecoHistory')) || [];
 
-// Update the "Points: ..." badge on page load
+// Update the Header Immediately
 const pointsDisplay = document.getElementById('point-balance');
 if (pointsDisplay) {
     pointsDisplay.innerText = userPoints;
@@ -36,9 +38,11 @@ function redeemReward(cost, name) {
         saveAllData();
         
         alert(`Success! You redeemed: ${name}`);
+        
+        // Update Header
         if (pointsDisplay) pointsDisplay.innerText = userPoints;
         
-        // Reload page to show change if on history page
+        // Refresh page if we are on History page to show new row
         if(window.location.href.includes("history.html")) location.reload();
         
     } else {
@@ -46,7 +50,7 @@ function redeemReward(cost, name) {
     }
 }
 
-// 3. PACKAGING PAGE LOGIC
+// 3. CART / PACKAGING UPDATES
 const basePrice = 5.00;
 function updateTotal(adjustment, showQR) {
     const newTotal = (basePrice + adjustment).toFixed(2);
@@ -71,17 +75,16 @@ function addToCart(item) {
     alert("Added " + item + " to cart!");
 }
 
-// 4. SAVE HELPER
+// 4. SAVE DATA
 function saveAllData() {
     localStorage.setItem('ecoPoints', userPoints);
     localStorage.setItem('ecoHistory', JSON.stringify(userHistory));
 }
 
-// 5. HISTORY RENDERER (Merges Real + Fake Data)
+// 5. HISTORY TABLE RENDERER
 const historyTableBody = document.getElementById('history-table-body');
 if (historyTableBody) {
-    
-    // Reverse loop to keep order correct when prepending
+    // Add new real transactions to the top
     [...userHistory].reverse().forEach(item => {
         const row = document.createElement('tr');
         
@@ -95,8 +98,6 @@ if (historyTableBody) {
             <td style="color: ${pointsColor}; font-weight: bold;">${pointsSign}${item.points}</td>
             <td><span class="status-pill ${pillClass}">${item.status}</span></td>
         `;
-        
-        // Insert at the very top of the table body
         historyTableBody.prepend(row);
     });
 }
