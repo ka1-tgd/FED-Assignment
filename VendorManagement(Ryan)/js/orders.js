@@ -8,18 +8,19 @@ const orders = [
 ];
 orders.sort((a, b) => Number(b.id) - Number(a.id));
 
-const PAGE_SIZE = 6;
+const page_size = 6;
 let page = 1;
 let filter = "all";
 
 function statusClass(status) {
   if (status === "Waiting for Acceptance") return "wait";
   if (status === "In Progress") return "prog";
-  if (status === "Refund Requested") return "refreq";
+  if (status === "Refund Requested") return "refundreq";
   if (status === "Refunded") return "ref";
-  return "refreq";
+  return "refundreq";
 }
 
+// status function
 function actionFor(status) {
   if (status === "Waiting for Acceptance") {
     return { text: "Accept", cls: "action-accept", disabled: false };
@@ -33,13 +34,13 @@ function actionFor(status) {
 function matchesFilter(o) {
   if (filter === "all") return true;
   if (filter === "waiting") return o.status === "Waiting for Acceptance";
-  if (filter === "ongoing") return o.status === "In Progress" || o.status === "Refund Requested";
+  if (filter === "ongoing") return o.status === "In Progress" || o.status === "Refund requested";
   return true;
 }
 
 function updateCounts() {
   const waiting = orders.filter(o => o.status === "Waiting for Acceptance").length;
-  const ongoing = orders.filter(o => o.status === "In Progress" || o.status === "Refund Requested").length;
+  const ongoing = orders.filter(o => o.status === "In Progress" || o.status === "Refund requested").length;
 
   const w = document.getElementById("countWaiting");
   const og = document.getElementById("countOngoing");
@@ -53,16 +54,15 @@ function render() {
 
   const list = orders.filter(matchesFilter);
 
-  const maxPage = Math.max(1, Math.ceil(list.length / PAGE_SIZE));
+  const maxPage = Math.max(1, Math.ceil(list.length / page_size));
   if (page > maxPage) page = maxPage;
 
-  const start = (page - 1) * PAGE_SIZE;
-  const slice = list.slice(start, start + PAGE_SIZE);
+  const start = (page - 1) * page_size;
+  const slice = list.slice(start, start + page_size);
 
   body.innerHTML = slice.map(o => {
     const sCls = statusClass(o.status);
     const act = actionFor(o.status);
-
     return `
       <tr>
         <td><span class="order-id">#${o.id}</span></td>
@@ -100,7 +100,6 @@ if (filtersEl) {
 
     document.querySelectorAll(".filter-btn").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
     filter = btn.dataset.filter;
     page = 1;
     render();
@@ -137,7 +136,6 @@ if (ordersBody) {
     else if (order.status === "In Progress" || order.status === "Refund Requested") {
       order.status = "Refunded";
     }
-
     render();
   });
 }

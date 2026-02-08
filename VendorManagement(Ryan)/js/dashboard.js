@@ -42,7 +42,6 @@ function chip(type, label) {
 function renderStats() {
   const wrap = el("orderStats");
   if (!wrap) return;
-
   wrap.innerHTML = orderStats.map(s => `
     <div class="stat-line">
       <div class="stat-num ${s.red ? "red" : ""}">${s.num}</div>
