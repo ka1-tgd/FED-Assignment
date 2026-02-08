@@ -1,11 +1,11 @@
 // Highlights the active nav link automatically based on file name.
 (function () {
-  const path = window.location.pathname.split("/").pop() || "index.html";
-  const links = document.querySelectorAll(".nav a");
+  const path = window.location.pathname.split("/").pop() || "index.html"; //extraxcts name of current page url
+  const links = document.querySelectorAll(".nav a"); //loop all nav links
 
   links.forEach(a => {
     const href = a.getAttribute("href");
-    if (href === path) a.classList.add("active");
+    if (href === path) a.classList.add("active"); //if href is the filename, add class active. then draws underline
   });
 
   

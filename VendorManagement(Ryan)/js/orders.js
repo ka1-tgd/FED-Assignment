@@ -34,13 +34,13 @@ function actionFor(status) {
 function matchesFilter(o) {
   if (filter === "all") return true;
   if (filter === "waiting") return o.status === "Waiting for Acceptance";
-  if (filter === "ongoing") return o.status === "In Progress" || o.status === "Refund Requested";
+  if (filter === "ongoing") return o.status === "In Progress" || o.status === "Refund requested";
   return true;
 }
 
 function updateCounts() {
   const waiting = orders.filter(o => o.status === "Waiting for Acceptance").length;
-  const ongoing = orders.filter(o => o.status === "In Progress" || o.status === "Refund Requested").length;
+  const ongoing = orders.filter(o => o.status === "In Progress" || o.status === "Refund requested").length;
 
   const w = document.getElementById("countWaiting");
   const og = document.getElementById("countOngoing");
