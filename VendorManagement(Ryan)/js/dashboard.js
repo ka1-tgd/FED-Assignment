@@ -103,17 +103,21 @@ function renderOrders() {
 }
 
 function bindButtons() {
-  const safeOn = (id, fn) => {
-    const node = el(id);
-    if (node) node.addEventListener("click", fn);
-  };
+  const go = (id, relPath) => {
+    const node = document.getElementById(id);
+    if (!node) return;
 
-  safeOn("viewFullMenuBtn", () => alert("Go to full menu page"));
-  safeOn("viewRenewalBtn", () => alert("Go to renewal details page"));
-  safeOn("requestRenewalBtn", () => alert("Request renewal flow"));
-  safeOn("viewFullInventoryBtn", () => alert("Go to inventory page"));
-  safeOn("viewAllOrdersBtn", () => alert("Go to orders page"));
+    node.addEventListener("click", (e) => {e.preventDefault();
+      window.location.assign(new URL(relPath, window.location.href).href);
+    });
+  };
+  go("viewFullMenuBtn", "menu.html");
+  go("viewRenewalBtn", "renewal.html");
+  go("requestRenewalBtn", "renewal.html");
+  go("viewFullInventoryBtn", "inventory.html");
+  go("viewAllOrdersBtn", "orders.html");
 }
+
 
 function init() {
   renderStats();
