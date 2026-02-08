@@ -139,18 +139,17 @@ if (finalOrderBtn) {
         const foodName = document.querySelector('.order-item-block h3').textContent;
         const qty = document.getElementById('quantity-display').textContent;
         const price = document.querySelector('.item-price').textContent;
-
         const lastItem = { name: foodName, quantity: qty, total: price };
 
         let masterCart = JSON.parse(localStorage.getItem("masterCart")) || [];
         masterCart.push(lastItem);
-        localStorage.setItem("masterCart", JSON.stringify(masterCart));
+
+        localStorage.removeItem("masterCart");
+        localStorage.removeItem("selectedFood");
 
         window.location.href = "queue-number.html";
     });
 }
-
-
 
 function renderPreviousItems() {
     const container = document.getElementById('cart-items-container');
