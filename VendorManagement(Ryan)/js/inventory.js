@@ -59,20 +59,14 @@ saveBtn?.addEventListener("click", () => {
   const category = ingCategory.value.trim();
   const qty = Number(ingQty.value);
   const unit = ingUnit.value.trim();
-
-  if (!name || !category || !unit || Number.isNaN(qty) || qty < 0) {
-    alert("Please fill in all fields correctly.");
-    return;
-  }
-
   const s = statusFromQty(qty);
   const tr = document.createElement("tr");
-  tr.setAttribute("data-status", s.key);
+  tr.setAttribute("data-status", s.key);  
   tr.innerHTML = `
     <td>${name}</td>
     <td>${category}</td>
     <td>
-      <select><option>${qty}</option></select>
+      <select><option>${qty}</option></select>          
     </td>
     <td>${unit}</td>
     <td><span class="status ${s.cls}">${s.label}</span></td>
